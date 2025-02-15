@@ -1,0 +1,71 @@
+@import "../variables";
+
+
+// .header_ctr: The container for the header
+.header_ctr {
+  height: 72px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+// .logo: Styles for the logo, circular with a fixed size
+.logo {
+  border-radius: 100%;
+  aspect-ratio: 1 / 1; // Ensures a 1:1 width-to-height ratio
+  width: 64px;
+}
+
+// .header_content: Wrapper for the header content
+.header_content {
+  display: flex;
+}
+
+// .navigation_buttons: Styles for the navigation buttons
+.navigation_buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  gap: 1.5em;
+  height: 100%;
+
+  // li: Styles for each navigation list item
+  li {
+
+    // a: Links inside each navigation item
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      transition: color 0.3s ease;
+
+      // &:hover: Hover effect for navigation links
+      &:hover {
+        color: $text_hover;
+      }
+    }
+
+    // .nav_link: Default styles for navigation links
+    .nav_link {
+      color: $text_not_active;
+    }
+
+    // .active: Styles for the active navigation link
+    .active {
+      color: $text;
+      border-bottom: $border_dark 2px solid;
+    }
+  }
+}
+
+// .navigation_btn: Additional styles for navigation buttons
+.navigation_btn {
+  @include h7;
+  @include label;
+  height: 100%;
+}

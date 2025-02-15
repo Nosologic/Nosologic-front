@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400&&display=swap');
+
+$background: #141414  ;
+$orange : #CD7B00;
+$purple : #7A2FDA;
+$white : rgba(255, 255, 255, 0.75);
+$lightgreen: #85C300;
+$text: #222222;
+$border_header: #e0e0e0;
+$btn_background: #e7e7e7;
+$border_dark: #222222;
+$text_hover: #000000;
+$text_not_active: #444444;
+$card-background: #ffffff;
+// text mixins
+
+@mixin font-family{
+  font-family: "Outfit", sans-serif;
+  font-weight: 900;
+}
+
+@mixin h1 {
+  @include font-family;
+  font-size: 64px;
+}
+
+@mixin h2 {
+  @include font-family;
+  font-size: 48px;
+}
+
+@mixin h3 {
+  @include font-family;
+  font-size: 40px;
+}
+
+@mixin h4 {
+  @include font-family;
+  font-size: 32px;
+}
+
+@mixin h5 {
+  @include font-family;
+  font-size: 24px;
+}
+
+@mixin h6 {
+  @include font-family;
+  font-size: 20px;
+}
+
+@mixin h7 {
+  @include font-family;
+  font-size: 16px;
+}
+
+@mixin h8 {
+  @include font-family;
+  font-size: 12px;
+}
+
+// button mixins
+
+@mixin label {
+  @include font-family;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+@mixin btn {
+  @include font-family;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
