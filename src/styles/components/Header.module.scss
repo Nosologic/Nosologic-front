@@ -3,22 +3,24 @@
 
 // .header_ctr: The container for the header
 .header_ctr {
-  height: 72px;
+  height: 64px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border: $border_header 1px solid;
 }
 
 // .logo: Styles for the logo, circular with a fixed size
 .logo {
   border-radius: 100%;
   aspect-ratio: 1 / 1; // Ensures a 1:1 width-to-height ratio
-  width: 64px;
+  width: 48px;
 }
 
 // .header_content: Wrapper for the header content
 .header_content {
   display: flex;
+  height: 100%;
 }
 
 // .navigation_buttons: Styles for the navigation buttons
@@ -35,7 +37,6 @@
 
   // li: Styles for each navigation list item
   li {
-
     // a: Links inside each navigation item
     a {
       display: flex;
@@ -43,7 +44,7 @@
       justify-content: center;
       height: 100%;
       transition: color 0.3s ease;
-
+      padding: 0 4px;
       // &:hover: Hover effect for navigation links
       &:hover {
         color: $text_hover;
@@ -59,6 +60,7 @@
     .active {
       color: $text;
       border-bottom: $border_dark 2px solid;
+      padding-top: 2px;
     }
   }
 }
@@ -68,4 +70,5 @@
   @include h7;
   @include label;
   height: 100%;
+
 }

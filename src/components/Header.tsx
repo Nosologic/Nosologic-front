@@ -2,6 +2,7 @@ import styles from '../styles/components/Header.module.scss';
 import logo from '../assets/logo.png'
 import {NavLink} from "react-router-dom";
 
+
 export default function Header() {
     const setActive = ({ isActive }: { isActive: boolean }) =>
         isActive ? styles.active : styles.nav_link;
@@ -31,8 +32,10 @@ export default function Header() {
                             Blog
                         </NavLink>
                     </li>
-
+                
                 </ul>
+
+                
             </div>
         </header>
     )
