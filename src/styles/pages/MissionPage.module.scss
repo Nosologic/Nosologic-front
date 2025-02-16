@@ -1,0 +1,20 @@
+@import '../variables';
+
+
+.mission_page_ctr {
+  display: flex;
+  width: 60%;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.page_title {
+  @include page_title;
+  margin: 3% auto;
+}
+
+.page_text {
+  @include h6;
+  font-weight: 300;
+}
