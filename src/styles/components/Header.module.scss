@@ -3,7 +3,7 @@
 
 // .header_ctr: The container for the header
 .header_ctr {
-  height: 64px;
+  height: 80px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -21,7 +21,12 @@
   display: flex;
   height: 100%;
   align-items: center;
-  gap: 1.5em;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.header_nav_menu {
+  height: 100%;
 }
 
 // .navigation_buttons: Styles for the navigation buttons
@@ -60,15 +65,13 @@
     // .active: Styles for the active navigation link
     .active {
       color: $text;
-      border-bottom: $border_dark 2px solid;
-      padding-top: 2px;
     }
   }
 }
 
 // .navigation_btn: Additional styles for navigation buttons
 .navigation_btn {
-  @include h7;
+  @include h6;
   @include label;
   height: 100%;
 }
@@ -80,7 +83,7 @@
   align-items: center;
   background-color: $search-background;
   border-radius: 8px;
-  height: 56%;
+  height: 48%;
 }
 
 // .search_icon: Styling for the search icon, including size and margin
@@ -99,3 +102,37 @@
   @include h7;
 }
 
+.sign_in_btn {
+  @include btn;
+  @include h7;
+  height: 48%;
+  background: none;
+  border: none;
+  padding: 0 4px;
+}
+
+.sign_up_btn {
+  @include btn;
+  @include h7;
+  height: 48%;
+  background: none;
+  border-radius: 4px;
+  border: 1px solid $border_dark;
+  padding: 0 8px;
+}
+
+.header_content_right {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5em;
+  height: 100%;
+  align-items: center;
+}
+
+.header_content_left {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5em;
+  height: 100%;
+  align-items: center;
+}
