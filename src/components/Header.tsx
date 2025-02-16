@@ -1,6 +1,7 @@
 import styles from '../styles/components/Header.module.scss';
-import logo from '../assets/logo.png'
+import logo from '../assets/logo no bg.png'
 import {NavLink} from "react-router-dom";
+import { AiOutlineSearch } from "react-icons/ai";
 
 
 export default function Header() {
@@ -32,10 +33,20 @@ export default function Header() {
                             Blog
                         </NavLink>
                     </li>
-                
                 </ul>
 
-                
+
+                <div className={styles.search_container}>
+                    <AiOutlineSearch className={styles.search_icon} />
+                    <input
+                        type="text"
+                        className={styles.search_input}
+                        placeholder="Search..."
+                        aria-label="Search"
+                    />
+                </div>
+
+
             </div>
         </header>
     )

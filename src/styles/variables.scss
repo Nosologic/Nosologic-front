@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400&&display=swap');
 
-$background: #141414  ;
+$background: #c5e7ea  ;
 $orange : #CD7B00;
 $purple : #7A2FDA;
 $white : rgba(255, 255, 255, 0.75);
@@ -12,6 +12,8 @@ $border_dark: #222222;
 $text_hover: #000000;
 $text_not_active: #444444;
 $card-background: #ffffff;
+$search-background: #d7eeee;
+
 // text mixins
 
 @mixin font-family{

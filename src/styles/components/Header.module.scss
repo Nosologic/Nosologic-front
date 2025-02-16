@@ -7,7 +7,6 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border: $border_header 1px solid;
 }
 
 // .logo: Styles for the logo, circular with a fixed size
@@ -21,6 +20,8 @@
 .header_content {
   display: flex;
   height: 100%;
+  align-items: center;
+  gap: 1.5em;
 }
 
 // .navigation_buttons: Styles for the navigation buttons
@@ -70,5 +71,31 @@
   @include h7;
   @include label;
   height: 100%;
-
 }
+
+
+// .search_container: Wrapper for the search section, contains search input and icon
+.search_container {
+  display: flex;
+  align-items: center;
+  background-color: $search-background;
+  border-radius: 8px;
+  height: 56%;
+}
+
+// .search_icon: Styling for the search icon, including size and margin
+.search_icon {
+  font-size: 1.2rem;
+  margin: 0 8px;
+}
+
+// .search_input: Styling for the search input field
+.search_input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  height: 100%;
+  @include h7;
+}
+

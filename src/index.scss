@@ -1,3 +1,5 @@
+@import './styles/variables';
+
 * {
   box-sizing: border-box;
   &>a:link {
@@ -19,13 +21,12 @@
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  background-color: #fdfdfd;
+  background-color: $background;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
 
 
