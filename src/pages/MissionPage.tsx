@@ -1,5 +1,5 @@
 import styles from '../styles/pages/MissionPage.module.scss';
-import missionText from '../assets/mission.txt';
+import missionText from '../assets/mission.txt?raw';
 
 export default function MissionPage() {
     return (
