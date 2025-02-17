@@ -1,9 +1,5 @@
 # Project Setup and Running Guide
 This document provides a step-by-step guide to set up, run, and manage the project on a new machine with no prior installations of Node.js, IDEs, or any dependencies.
-## Prerequisites
-Before starting, ensure you have the following:
-1. **Operating System**: Windows, macOS, or Linux.
-2. **Internet Access**: To download required tools and dependencies.
 
 ## Step 1: Install Required Software
 1. **Install Node.js**
