@@ -1,5 +1,30 @@
 @import '../variables';
 
 .disease_card {
+  @include font-family;
   width: 100%;
+  border-radius: 10px;
+  border: 1px solid $border_dark;
+  padding: 16px;
+
+  .disease_card_info_ctr {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .dc_info_ctr {
+    display: flex;
+    flex-direction: column;
+    .dc_info_overflow {
+      display: inline-block; /* Makes the content width adjustable */
+      max-width: 200px; /* Fixed container width */
+      overflow-x: auto; /* Enables horizontal scrolling */
+      white-space: nowrap; /* Prevents wrapping to a new line */
+      scrollbar-width: thin; /* Makes the scrollbar thinner (for modern browsers) */
+    }
+  }
+
+
 }
