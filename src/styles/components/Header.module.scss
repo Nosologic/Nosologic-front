@@ -77,32 +77,6 @@
   height: 100%;
 }
 
-
-// .search_container: Wrapper for the search section, contains search input and icon
-.search_container {
-  display: flex;
-  align-items: center;
-  background-color: $search-background;
-  border-radius: 8px;
-  height: 48%;
-}
-
-// .search_icon: Styling for the search icon, including size and margin
-.search_icon {
-  font-size: 1.2rem;
-  margin: 0 8px;
-}
-
-// .search_input: Styling for the search input field
-.search_input {
-  flex: 1;
-  border: none;
-  outline: none;
-  background-color: transparent;
-  height: 100%;
-  @include h7;
-}
-
 .sign_in_btn {
   @include btn;
   @include h7;

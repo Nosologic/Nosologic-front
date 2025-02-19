@@ -1,7 +1,7 @@
 import styles from '../styles/components/Header.module.scss';
 import logo from '../assets/logo no bg.png'
 import {NavLink} from "react-router-dom";
-import { AiOutlineSearch } from "react-icons/ai";
+import CustomSearch from "./UIKit/CustomSearch.tsx";
 
 
 export default function Header() {
@@ -45,15 +45,7 @@ export default function Header() {
 
 
                 <div className={styles.header_content_right}>
-                    <div className={styles.search_container}>
-                        <AiOutlineSearch className={styles.search_icon} />
-                        <input
-                            type="text"
-                            className={styles.search_input}
-                            placeholder="Search..."
-                            aria-label="Search"
-                        />
-                    </div>
+                    <CustomSearch/>
 
                     <button className={styles.sign_in_btn}>
                         Sign in

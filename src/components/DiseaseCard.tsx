@@ -14,17 +14,25 @@ export default function DiseaseCard({id}: Readonly<{ id: number }>) {
                 {/* dc stands for disease card */}
                 <div className={styles.dc_info_ctr}>
                     <span className={styles.dc_info_title}>Locations:</span>
-                    <span className={styles.dc_info_overflow}>{locations.join(", ")}</span>
+                    <div className={styles.dc_info_overflow}>
+                        {locations.map(((name) => (
+                            <span key={name} className={styles.tag}>{name}</span>
+                        )))}
+                    </div>
                 </div>
 
                 <div className={styles.dc_info_ctr}>
                     <span className={styles.dc_info_title}>Alternative Names:</span>
-                    <span className={styles.dc_info_overflow}>{alt_names.join(", ")}</span>
+                    <div className={styles.dc_info_overflow}>
+                        {alt_names.map(((name) => (
+                            <span key={name} className={styles.tag}>{name}</span>
+                        )))}
+                    </div>
                 </div>
 
                 <div className={styles.dc_info_ctr}>
                     <span className={styles.dc_info_title}>Locus:</span>
-                    <span>{locus}</span>
+                    <span className={styles.tag}>{locus}</span>
                 </div>
             </div>
 
