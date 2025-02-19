@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
 $background: #c5e7ea  ;
 $orange : #CD7B00;
@@ -13,11 +12,16 @@ $text_not_active: #505050;
 $search-background: #d7eeee;
 $header_border: rgba(0, 0, 0, 0.07);
 $text_light: #4f4f4f;
+$text_blue: #000050;
 // text mixins
 
 @mixin font-family{
-  font-family: "Outfit", sans-serif;
+  font-family: "Source Sans 3", sans-serif;
   font-weight: 400;
+}
+
+@mixin font-family-official {
+  font-family: "DM Serif Display", sans-serif;
 }
 
 @mixin h1 {
@@ -76,6 +80,6 @@ $text_light: #4f4f4f;
 }
 
 @mixin page_title {
-  @include h2;
-  font-weight: 600;
+  @include h4;
+
 }

@@ -3,22 +3,54 @@
 
 .mission_page_ctr {
   display: flex;
-  width: 60%;
+  width: 50%;
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
 }
 
-.page_title {
-  @include page_title;
-  margin: 3% auto;
+.title_ctr {
+  margin: 7% auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .nosologic_title {
+    @include h1;
+    @include font-family-official;
+    font-weight: 700;
+    color: $text;
+  }
+  .motto {
+    @include h7;
+    color: $text_light;
+  }
 }
 
-.page_text {
-  @include h6;
-  font-weight: 300;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  color: $text_light;
+.mission_text_ctr {
+  .mission_label {
+    @include page_title;
+    @include font-family-official;
+    margin: 2% auto;
+  }
 
+  .page_text {
+    @include font-family;
+    font-size: 18px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: $text_light;
+    line-height: 1.6;
+  }
+  .mission_ref {
+    color: $text_blue;
+  }
+
+  .mission_author {
+    color: $text_blue;
+    font-weight: 500;
+  }
 }
+
+
+

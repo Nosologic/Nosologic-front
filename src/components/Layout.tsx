@@ -1,5 +1,6 @@
 import React from "react";
-import Header from "./Header"; // Your shared header component
+import Header from "./Header";
+import Footer from "./Footer.tsx"; // Your shared header component
 
 
 interface LayoutProps {
@@ -11,6 +12,7 @@ export default function Layout({ children }: Readonly<LayoutProps>) {
         <>
             <Header />
             {children}
+            <Footer />
         </>
     );
 }
