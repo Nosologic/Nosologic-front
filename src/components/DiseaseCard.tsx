@@ -7,23 +7,23 @@ export default function DiseaseCard({id}: Readonly<{ id: number }>) {
 
     return (
         <div className={styles.disease_card}>
-            <NavLink to={`/diseases/${id}`} className={styles.view_more_link}>
+            <NavLink to={`/diseases/${id}`} className={styles.dc_name}>
                 {name}
             </NavLink>
             <div className={styles.disease_card_info_ctr}>
                 {/* dc stands for disease card */}
                 <div className={styles.dc_info_ctr}>
-                    <span>Locations:</span>
+                    <span className={styles.dc_info_title}>Locations:</span>
                     <span className={styles.dc_info_overflow}>{locations.join(", ")}</span>
                 </div>
 
                 <div className={styles.dc_info_ctr}>
-                    <span>Alternative Names:</span>
+                    <span className={styles.dc_info_title}>Alternative Names:</span>
                     <span className={styles.dc_info_overflow}>{alt_names.join(", ")}</span>
                 </div>
 
                 <div className={styles.dc_info_ctr}>
-                    <span>Locus:</span>
+                    <span className={styles.dc_info_title}>Locus:</span>
                     <span>{locus}</span>
                 </div>
             </div>

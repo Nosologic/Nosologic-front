@@ -7,6 +7,13 @@
   border: 1px solid $border_dark;
   padding: 16px;
 
+  .dc_name {
+    @include h5;
+    font-weight: 600;
+    color: $text_blue;
+    margin-left: 2px;
+  }
+
   .disease_card_info_ctr {
     display: flex;
     flex-direction: row;
@@ -15,14 +22,23 @@
   }
 
   .dc_info_ctr {
+    margin-top: 4px;
     display: flex;
     flex-direction: column;
+
+    .dc_info_title {
+      color: $text;
+      font-weight: 500;
+      font-size: 18px;
+    }
+
     .dc_info_overflow {
       display: inline-block; /* Makes the content width adjustable */
       max-width: 200px; /* Fixed container width */
       overflow-x: auto; /* Enables horizontal scrolling */
       white-space: nowrap; /* Prevents wrapping to a new line */
       scrollbar-width: thin; /* Makes the scrollbar thinner (for modern browsers) */
+      color: $text_light;
     }
   }
 
