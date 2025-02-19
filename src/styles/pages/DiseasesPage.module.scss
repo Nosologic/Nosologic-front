@@ -7,3 +7,8 @@
   flex-direction: column;
   gap: 8px;
 }
+
+.page_title {
+  @include page_title;
+  font-weight: 600;
+}
