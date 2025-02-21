@@ -2,4 +2,13 @@
 
 .about_member_entry {
   display: flex;
+  width: 280px;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.about_member_info {
+  @include font-family;
+  font-size: 18px;
+
 }

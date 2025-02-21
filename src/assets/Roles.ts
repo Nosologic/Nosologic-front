@@ -1,11 +1,11 @@
 const roles = [
     {
          id: 1,
-         name: "Scientific Director",
+         name: "Scientific director",
      },
      {
          id: 2,
-         name: "Board Member",
+         name: "Board members",
      },
 ]
 

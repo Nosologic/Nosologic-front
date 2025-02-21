@@ -9,10 +9,10 @@ export default function MemberEntry({ name, linkedin } : Readonly<IMemberEntryPr
 
     return (
         <div className={styles.about_member_entry}>
-            <span className={styles.about_member_name}>
+            <span className={styles.about_member_info}>
                 {name}
             </span>
-            <a href={linkedin}>
+            <a href={linkedin} className={styles.about_member_info}>
                 LinkedIn
             </a>
         </div>

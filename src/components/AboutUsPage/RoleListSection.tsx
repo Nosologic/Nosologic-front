@@ -9,11 +9,14 @@ export default function RoleListSection() {
             {roles.map((role) => (
                 <div key={role.id} className={styles.role_section}>
                     <span className={styles.about_role_title}>{role.name}:</span>
-                    {members
-                        .filter((member) => member.role_id === role.id)
-                        .map((member) => (
-                            <MemberEntry key={member.id} name={member.name} linkedin={member.linkedin} />
-                        ))}
+                    <div className={styles.members_list}>
+                        {members
+                            .filter((member) => member.role_id === role.id)
+                            .map((member) => (
+                                <MemberEntry key={member.id} name={member.name} linkedin={member.linkedin} />
+                            ))}
+                    </div>
+
                 </div>
             ))}
         </div>
