@@ -1,0 +1,9 @@
+@import "../../variables";
+
+.role_list_section {
+  .about_role_title {
+    @include h5;
+    font-weight: 500;
+    color: $text;
+  }
+}

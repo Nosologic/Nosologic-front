@@ -1,16 +1,11 @@
 import { NavLink } from "react-router-dom";
 import styles from "../../styles/components/DiseasesPage/DiseaseCard.module.scss"
 import diseases from "../../assets/Diseases.ts";
-import {FaHeart, FaRegHeart} from "react-icons/fa";
-import {useState} from "react";
+import FavButton from "../UIKit/FavButton.tsx";
 
 
 export default function DiseaseCard({id}: Readonly<{ id: number }>) {
     const { name, locations, alt_names, locus } = diseases[id - 1];
-    const [isFavourite, setIsFavourite] = useState(false);
-    const toggleFavourite = () => {
-        setIsFavourite(!isFavourite);
-    }
 
     return (
         <div className={styles.disease_card}>
@@ -18,14 +13,7 @@ export default function DiseaseCard({id}: Readonly<{ id: number }>) {
                 <NavLink to={`/diseases/${id}`} className={styles.dc_name}>
                     {name}
                 </NavLink>
-                <button className={styles.fav_btn} onClick={toggleFavourite}>
-                    {isFavourite ? (
-                        <FaHeart className={styles.fav_icon} /> // Filled heart when active
-                    ) : (
-                        <FaRegHeart className={styles.fav_icon} /> // Outline heart when not active
-                    )}
-
-                </button>
+                <FavButton />
             </div>
 
             <div className={styles.disease_card_info_ctr}>

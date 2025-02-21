@@ -1,0 +1,34 @@
+@import "../variables";
+
+.about_page_ctr {
+  width: 760px;
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.page_title {
+  @include page_title;
+}
+
+.about_page_text {
+  @include font-family;
+  font-size: 18px;
+  color: $text;
+  line-height: 1.6;
+}
+
+.about_section {
+  margin-top: 16px;
+  .about_role_title {
+    @include h5;
+    font-weight: 500;
+    color: $text;
+  }
+
+}
+
+.about_member_entry {
+  display: flex;
+}
