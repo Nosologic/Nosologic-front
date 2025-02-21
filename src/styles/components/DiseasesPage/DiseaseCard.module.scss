@@ -7,11 +7,13 @@
   border: 1px solid $border_light;
   padding: 16px;
 
-  .dc_name {
-    @include h5;
-    font-weight: 600;
-    color: $text_blue;
+  .dc_upper_ctr {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
+
 
   .disease_card_info_ctr {
     display: flex;
@@ -27,6 +29,35 @@
 
   }
 }
+
+.dc_name {
+  @include h5;
+  font-weight: 600;
+  color: $dark_blue;
+}
+
+.fav_btn {
+  height: 32px;
+  width: 32px;
+  background: none;
+  border: 1.5px solid $dark_blue;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: $white;
+  }
+
+  .fav_icon {
+    color: $dark_blue;
+    height: 32px;
+    width: 32px;
+  }
+}
+
 
 .dc_info_title {
   color: $text;
@@ -61,7 +92,7 @@
 }
 
 .tag {
-  background-color: #a0e1e5;
+  background-color: $intense_aqua;
   color: #000;
   font-weight: bold;
   padding: 2px 4px;
