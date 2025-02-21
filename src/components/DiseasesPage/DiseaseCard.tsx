@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import styles from "../styles/components/DiseaseCard.module.scss"
-import diseases from "../assets/Diseases.ts";
+import styles from "../../styles/components/DiseasesPage/DiseaseCard.module.scss"
+import diseases from "../../assets/Diseases.ts";
 
 export default function DiseaseCard({id}: Readonly<{ id: number }>) {
     const { name, locations, alt_names, locus } = diseases[id - 1];

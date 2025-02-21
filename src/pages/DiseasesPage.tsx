@@ -1,5 +1,5 @@
 import styles from '../styles/pages/DiseasesPage.module.scss';
-import DiseaseCard from "../components/DiseaseCard.tsx";
+import DiseaseCard from "../components/DiseasesPage/DiseaseCard.tsx";
 import diseases from "../assets/Diseases.ts";
 import CustomSearch from "../components/UIKit/CustomSearch.tsx";
 
