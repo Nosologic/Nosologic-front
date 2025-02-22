@@ -1,15 +1,12 @@
 @import "../variables";
 
 .about_page_ctr {
-  width: 760px;
-  margin-top: 48px;
-  display: flex;
-  flex-direction: column;
+
   gap: 8px;
 }
 
 .page_title {
-  @include page_title;
+  @include title1;
 }
 
 .about_page_text {

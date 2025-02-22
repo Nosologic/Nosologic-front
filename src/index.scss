@@ -39,14 +39,19 @@ body {
   min-height: 100vh;
 }
 
+main {
+  width: 760px;
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+}
+
 #root {
   width: 100%;
 }
 
 span {
   display: inline-block;
-}
-
-main {
-  justify-self: center;
+  @include font-family;
 }

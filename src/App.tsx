@@ -1,6 +1,5 @@
 import './App.scss'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage.tsx";
 import AboutUsPage from "./pages/AboutUsPage.tsx";
 import DiseasesPage from "./pages/DiseasesPage.tsx";
 import BlogPage from "./pages/BlogPage.tsx";
@@ -16,7 +15,8 @@ function App() {
             <Layout>
                 <Routes>
                     <Route path="/" element={<MissionPage />}/>
-                    <Route path="/home" element={<HomePage />}/>
+                    {/* TODO: homepage instead of MissionPage for /home */}
+                    <Route path="/home" element={<MissionPage />}/>
                     <Route path="/about" element={<AboutUsPage />}/>
                     <Route path="/diseases" element={<DiseasesPage />}/>
                     <Route path="/blog" element={<BlogPage />}/>

@@ -1,0 +1,17 @@
+@import "../variables";
+
+.page_title {
+  @include title1;
+  margin-bottom: 16px;
+}
+
+.disease_info_left_section_title {
+  @include title2;
+  margin: 16px 0;
+}
+
+.disease_info_left_section_text {
+  @include h7;
+  color: $text;
+  line-height: 1.6;
+}

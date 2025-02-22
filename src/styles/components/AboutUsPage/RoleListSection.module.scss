@@ -4,8 +4,7 @@
 
   .about_role_title {
     margin-top: 24px;
-    @include h5;
-    font-weight: 600;
+    @include title2;
     color: $text;
   }
 

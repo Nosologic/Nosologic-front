@@ -2,10 +2,6 @@
 
 
 .mission_page_ctr {
-  display: flex;
-  width: 760px;
-  flex-direction: column;
-  justify-content: center;
   margin: 0 auto;
 }
 
@@ -29,7 +25,7 @@
 
 .mission_text_ctr {
   .mission_label {
-    @include page_title;
+    @include title1;
     @include font-family-official;
     margin: 2% auto;
   }
