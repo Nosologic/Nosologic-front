@@ -14,27 +14,35 @@ export default function DiseaseDetailPage() {
             </span>
             <div className={styles.disease_info_ctr}>
                 <div className={styles.disease_info_left_section}>
+                    <div className={styles.disease_info_left_ctr}>
+                        <span className={styles.disease_info_left_section_title}>
+                            Locations:
+                        </span>
+                        {locations.map((loc) => (
+                            <span className={styles.disease_info_left_section_text} key={loc}>{loc}</span>
+                        ))}
+                    </div>
+
                     <span className={styles.disease_info_left_section_title}>
                         Description:
                     </span>
                     <span className={styles.disease_info_left_section_text}>
                         {description}
                     </span>
+
                 </div>
                 <table className={styles.disease_info_table} role={"table"}>
                     <caption className={styles.table_caption}>{name}</caption>
                     <tbody>
                         <tr>
-                            <th scope={"row"} className={styles.table_label}>Locations:</th>
-                            {locations.map((loc) => (
-                                <td className={styles.table_data} key={loc}>{loc}</td>
-                            ))}
-                        </tr>
-                        <tr>
                             <th scope={"row"} className={styles.table_label}>Alt. names:</th>
-                            {alt_names.map((an) => (
-                                <td className={styles.table_data} key={an}>{an}</td>
-                            ))}
+                            <td>
+                                <ul className={styles.table_data}>
+                                    {alt_names.map((an) => (
+                                        <li key={an} className={styles.list_item}>{an}</li>
+                                    ))}
+                                </ul>
+                            </td>
                         </tr>
                         <tr>
                             <th scope={"row"} className={styles.table_label}>Locus:</th>
