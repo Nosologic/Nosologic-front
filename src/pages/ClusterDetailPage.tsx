@@ -6,7 +6,8 @@ import DataTable from "../components/UIKit/DataTable.tsx";
 export default function ClusterDetailPage() {
     const { id } = useParams<{ id: string }>();
     const numericId = Number(id ?? "0");
-    const location = locations.find((loc) => loc.id === numericId);
+    const location = locations.find((loc) =>
+        loc.id === numericId);
 
     // Extract location fields with defaults
     const {
@@ -18,6 +19,7 @@ export default function ClusterDetailPage() {
         variant = "N/A",
         reference = "N/A",
         reference_link = "N/A",
+        description = "N/A",
     } = location || {};
 
     // Map all data fields into a key-value structure
@@ -33,7 +35,15 @@ export default function ClusterDetailPage() {
     return (
         <main className={styles.cluster_detail_page_ctr}>
             <span className={styles.page_title}>{name}</span>
-            <DataTable dataRows={dataRows}/>
+            <div className={styles.cluster_detail_info}>
+                <span className={styles.page_subtitle}>Description</span>
+                <div>
+                    <DataTable dataRows={dataRows}/>
+                    <p className={styles.cluster_info_text}>{description}</p>
+                </div>
+
+            </div>
+
         </main>
     );
 }

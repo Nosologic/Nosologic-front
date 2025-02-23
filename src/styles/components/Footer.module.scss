@@ -1,3 +1,23 @@
+@use "../variables";
+
 .footer {
-  height: 128px;
+  height: 96px;
+  border-top: 1px solid variables.$header_border;
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer_contact {
+  @include variables.h7;
+  color: variables.$text_light;
+  font-weight: 400;
+}
+
+.text_footer {
+  @include variables.h8;
+  color: variables.$text_light;
+  font-weight: 300;
 }

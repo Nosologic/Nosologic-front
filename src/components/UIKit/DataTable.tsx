@@ -4,17 +4,19 @@ import {JSX} from "react";
 
 interface DataTableProps {
     caption?: string;
+    image?: string;
     dataRows: {
         label: string;
         value: string | string[] | JSX.Element;
     }[];
 }
 
-export default function DataTable({ caption, dataRows }: Readonly<DataTableProps>) {
+export default function DataTable({ caption, image, dataRows }: Readonly<DataTableProps>) {
     return (
         <table className={styles.disease_info_table} style={caption ? undefined : { borderRadius: "4px" }}
                role="table">
             {caption ? <caption className={styles.table_caption}>{caption}</caption> : null}
+            {image ? <img src={image} alt={caption}/> : null}
             <tbody>
             {dataRows.map(({ label, value }, index) => (
                 <TableRow key={index} label={label} value={value} />
