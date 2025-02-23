@@ -1,0 +1,9 @@
+@use '../variables';
+
+.cluster_detail_page_ctr {
+  display: flex;
+}
+
+.page_title {
+  @include variables.title1;
+}

@@ -3,11 +3,18 @@ import styles from "../styles/pages/DiseaseDetailPage.module.scss";
 import {NavLink, useParams} from "react-router-dom";
 import diseases from "../assets/Diseases.ts";
 import {GoChevronDown, GoChevronRight} from "react-icons/go";
+import DataTable from "../components/UIKit/DataTable.tsx";
 
 export default function DiseaseDetailPage() {
     const { id } = useParams<{ id: string }>();
     const numericId = Number(id ?? "0");
     const { name, locations, alt_names, locus, omim, description } = diseases[numericId - 1];
+
+    const dataRows = [
+        { label: "Alt. names", value: alt_names },
+        { label: "Locus", value: locus },
+        { label: "Omim", value: <a href={omim} target="_blank" rel="noopener noreferrer">{omim}</a> },
+    ];
 
     const [isLocationsVisible, setIsLocationsVisible] = useState(false);
 
@@ -51,37 +58,7 @@ export default function DiseaseDetailPage() {
                             Description:
                         </span>
                         <div>
-                            <table className={styles.disease_info_table} role={"table"}>
-                                <caption className={styles.table_caption}>{name}</caption>
-                                <tbody>
-                                <tr>
-                                    <th scope={"row"} className={styles.table_label}>
-                                        Alt. names:
-                                    </th>
-                                    <td>
-                                        <ul>
-                                            {alt_names.map((an) => (
-                                                <li key={an} className={styles.table_data}>
-                                                    {an}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope={"row"} className={styles.table_label}>
-                                        Locus:
-                                    </th>
-                                    <td className={styles.table_data}>{locus}</td>
-                                </tr>
-                                <tr>
-                                    <th scope={"row"} className={styles.table_label}>
-                                        Omim:
-                                    </th>
-                                    <td className={styles.table_data} ><a href={`https://www.${omim}`}>{omim}</a></td>
-                                </tr>
-                                </tbody>
-                            </table>
+                            <DataTable caption={name} dataRows={dataRows}/>
                             <p className={styles.disease_info_left_section_text}>
                                 {description}
                             </p>

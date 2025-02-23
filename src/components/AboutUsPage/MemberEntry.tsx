@@ -12,7 +12,7 @@ export default function MemberEntry({ name, linkedin } : Readonly<IMemberEntryPr
             <span className={styles.about_member_info}>
                 {name}
             </span>
-            <a href={linkedin} className={styles.about_member_info}>
+            <a href={linkedin} className={styles.about_member_info} target="_blank" rel="noopener noreferrer">
                 LinkedIn
             </a>
         </div>
