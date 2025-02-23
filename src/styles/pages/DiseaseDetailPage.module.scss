@@ -30,6 +30,11 @@
   width: fit-content;
   padding: 0;
   margin: 16px 0;
+  svg {
+    vertical-align: middle;
+    stroke-width: 0.5px;
+  }
+
 }
 
 .disease_info_left_section_text {

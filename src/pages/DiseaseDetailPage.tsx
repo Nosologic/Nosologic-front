@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "../styles/pages/DiseaseDetailPage.module.scss";
 import {NavLink, useParams} from "react-router-dom";
 import diseases from "../assets/Diseases.ts";
+import {GoChevronDown, GoChevronRight} from "react-icons/go";
 
 export default function DiseaseDetailPage() {
     const { id } = useParams<{ id: string }>();
@@ -28,7 +29,8 @@ export default function DiseaseDetailPage() {
                             className={styles.location_toggle_btn}
                             onClick={toggleLocationsVisibility}
                         >
-                            Locations:
+                            Locations
+                            {isLocationsVisible ? <GoChevronDown /> : <GoChevronRight/>}
                         </button>
 
                         {/* Conditionally render the locations list */}
