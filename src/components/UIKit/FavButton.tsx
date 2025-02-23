@@ -1,4 +1,4 @@
-import styles from "../../styles/components/DiseasesPage/DiseaseCard.module.scss";
+import styles from "../../styles/components/UIKit/FavButton.module.scss";
 import {FaRegStar, FaStar} from "react-icons/fa";
 import {useState} from "react";
 

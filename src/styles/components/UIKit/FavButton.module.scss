@@ -1,0 +1,23 @@
+@use "../../variables";
+
+.fav_btn {
+  height: 32px;
+  width: 32px;
+  background: none;
+  border: 1.5px solid variables.$dark_blue;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: variables.$white;
+  }
+
+  .fav_icon {
+    color: variables.$dark_blue;
+    height: 32px;
+    width: 32px;
+  }
+}

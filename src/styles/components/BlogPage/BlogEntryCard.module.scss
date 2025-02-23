@@ -1,0 +1,60 @@
+@use '../../variables';
+
+.disease_card {
+  @include variables.font-family;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid variables.$border_light;
+  padding: 16px;
+
+  .bec_upper_ctr {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  .blog_entry_card_info_ctr {
+    display: flex;
+    flex-direction: row;
+    gap: 72px;
+    align-items: center;
+  }
+
+  .bec_info_ctr {
+    margin-top: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.bec_title {
+  @include variables.h5;
+  font-weight: 600;
+  color: variables.$dark_blue;
+}
+
+.bec_content {
+  @include variables.h7;
+  margin: 12px 0 12px 4px;
+}
+
+.bec_info_title {
+  color: variables.$text;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 4px;
+}
+
+.be_info {
+  font-weight: bold;
+  margin: 4px 0;
+  width: fit-content;
+}

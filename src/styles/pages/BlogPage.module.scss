@@ -1,0 +1,16 @@
+@use '../variables';
+
+.page_title {
+  @include variables.title1;
+}
+
+.search_container {
+  margin: 16px 0;
+}
+
+.blog_entries {
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
