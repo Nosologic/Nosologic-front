@@ -45,7 +45,7 @@ const diseases = [
             'Doença dos Pezinhos'
         ],
         locus: 'TTR',
-        omim: 'omim.org/entry/105210',
+        omim: 'https://omim.org/entry/105210',
         description: 'This hereditary disease is unusual because it seems to originate from only a few places in the world.\n' +
             '\n' +
             'In 2024, Per Roos and Sebastian Wärmländer of the Karolinska Institute in Stockholm, Sweden, remarked that the largest clusters of the disease have something in common: they are all located in or near ancient mining districts. They argue that this implies exposure to heavy metals may be one of its causes. If true, carriers of certain TTR mutations would be more likely to develop the disease when exposed to high levels of heavy metals. The authors do not specify which ones they think are the culprit.\n' +
