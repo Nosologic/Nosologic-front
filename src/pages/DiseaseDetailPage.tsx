@@ -13,7 +13,7 @@ export default function DiseaseDetailPage() {
     const dataRows = [
         { label: "Alt. names", value: alt_names },
         { label: "Locus", value: locus },
-        { label: "Omim", value: <a href={omim} target="_blank" rel="noopener noreferrer">{omim}</a> },
+        { label: "Omim", value: <a href={omim} target="_blank" rel="noopener noreferrer">{omim.slice(8)}</a> },
     ];
 
     const [isLocationsVisible, setIsLocationsVisible] = useState(false);

@@ -5,7 +5,7 @@ const diseases = [
         locations: [{id: 1, location: 'Troodos Mountains, Cyprus'}],
         alt_names: ['C3 Glomerulopathy 3', 'CFHR5 Nephropathy'],
         locus: 'CFHR5',
-        omim: 'omim.org/entry/608593#0001',
+        omim: 'https://omim.org/entry/608593#0001',
         description: 'This very rare hereditary disease is only known to occur in people of Cypriot descent. All patients carry the same mutation; it seems to originate in the Troodos mountains in the center of this eastern Mediterranean island. The disease shows a so-called autosomal dominant inheritance pattern, which means it runs in families. The symptoms are caused by a gradual accumulation of the immune system protein C3 in the glomeruli, tiny filtering devices in the kidneys. Symptoms usually start manifesting themselves around the fourth decade of life. Over time, these kidney symptoms worsen. with 50 % of patients progressing to kidney failure within a decade if left untreated. A kidney transplantation can delay the process, but the disease has no cure.\n' +
             '\n' +
             'Carter & Nguyen have offered an explanation of why mutations linked to serious genetic diseases such as these still go around in some populations. The idea is that, apart from being linked to a disease, they also confer an evolutionary advantage to their carriers, leading to a trade-off. If this advantage is specific to a certain type of environment, over time this can result in a local accumulation of a mutation that is very rare or absent elsewhere. \n' +
