@@ -13,6 +13,7 @@ export default function DiseaseDetailPage() {
                 {name}:
             </span>
             <div className={styles.disease_info_ctr}>
+
                 <div className={styles.disease_info_left_section}>
                     <div className={styles.disease_info_left_ctr}>
                         <span className={styles.disease_info_left_section_title}>
@@ -21,39 +22,47 @@ export default function DiseaseDetailPage() {
                         {locations.map((loc) => (
                             <span className={styles.disease_info_left_section_text} key={loc}>{loc}</span>
                         ))}
+
+                    </div>
+                    <div>
+                        <span className={styles.disease_info_left_section_title}>
+                            Description:
+                        </span>
+                        <div>
+                            <table className={styles.disease_info_table} role={"table"}>
+                                <caption className={styles.table_caption}>{name}</caption>
+                                <tbody>
+                                <tr>
+                                    <th scope={"row"} className={styles.table_label}>Alt. names:</th>
+                                    <td>
+                                        <ul className={styles.table_data}>
+                                            {alt_names.map((an) => (
+                                                <li key={an} className={styles.list_item}>{an}</li>
+                                            ))}
+
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope={"row"} className={styles.table_label}>Locus:</th>
+                                    <td className={styles.table_data}>{locus}</td>
+                                </tr>
+                                <tr>
+                                    <th scope={"row"} className={styles.table_label}>Omim:</th>
+                                    <td className={styles.table_data}>{omim}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <p className={styles.disease_info_left_section_text}>
+                                {description}
+                            </p>
+                        </div>
+
                     </div>
 
-                    <span className={styles.disease_info_left_section_title}>
-                        Description:
-                    </span>
-                    <span className={styles.disease_info_left_section_text}>
-                        {description}
-                    </span>
 
                 </div>
-                <table className={styles.disease_info_table} role={"table"}>
-                    <caption className={styles.table_caption}>{name}</caption>
-                    <tbody>
-                        <tr>
-                            <th scope={"row"} className={styles.table_label}>Alt. names:</th>
-                            <td>
-                                <ul className={styles.table_data}>
-                                    {alt_names.map((an) => (
-                                        <li key={an} className={styles.list_item}>{an}</li>
-                                    ))}
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope={"row"} className={styles.table_label}>Locus:</th>
-                            <td className={styles.table_data}>{locus}</td>
-                        </tr>
-                        <tr>
-                            <th scope={"row"} className={styles.table_label}>Omim:</th>
-                            <td className={styles.table_data}>{omim}</td>
-                        </tr>
-                    </tbody>
-                </table>
+
             </div>
         </main>
     )
