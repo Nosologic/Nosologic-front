@@ -6,6 +6,7 @@ import BlogPage from "./pages/BlogPage.tsx";
 import MissionPage from "./pages/MissionPage.tsx";
 import Layout from "./components/Layout.tsx";
 import DiseaseDetailPage from "./pages/DiseaseDetailPage.tsx";
+import ClusterDetailPage from "./pages/ClusterDetailPage.tsx";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
                     <Route path="/diseases" element={<DiseasesPage />}/>
                     <Route path="/blog" element={<BlogPage />}/>
                     <Route path="/diseases/:id" element={<DiseaseDetailPage/>}/>
+                    <Route path="/clusters/:id" element={<ClusterDetailPage/>}/>
                 </Routes>
             </Layout>
 

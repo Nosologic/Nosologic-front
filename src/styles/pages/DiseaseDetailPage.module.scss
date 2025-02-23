@@ -22,6 +22,16 @@
   margin: 16px 0;
 }
 
+.location_toggle_btn {
+  @include title2;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: fit-content;
+  padding: 0;
+  margin: 16px 0;
+}
+
 .disease_info_left_section_text {
   @include h7;
   color: $text;
@@ -30,16 +40,25 @@
 }
 
 .disease_info_table {
-  border: 1px solid $border_dark;
-  border-radius: 4px;
+  margin-left: 16px;
+  border-bottom: 1px solid $border_dark;
+  border-left: 1px solid $border_dark;
+  border-right: 1px solid $border_dark;
+  border-radius: 0 0 4px 4px;
   height: fit-content;
   float: right;
+  padding: 0 8px 16px;
+  th, td {
+    padding-top: 16px ; /* Simulate a gap with a transparent border */
+  }
 }
 
 .table_caption {
   @include h6;
   color: $text;
   font-weight: 600;
+  border: 1px solid $border_dark;
+  border-radius: 4px 4px 0 0;
 }
 
 .table_label {

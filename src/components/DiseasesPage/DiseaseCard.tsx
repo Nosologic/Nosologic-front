@@ -21,8 +21,8 @@ export default function DiseaseCard({id}: Readonly<{ id: number }>) {
                 <div className={styles.dc_info_ctr}>
                     <span className={styles.dc_info_title}>Locations:</span>
                     <div className={styles.dc_info_overflow}>
-                        {locations.map(((name) => (
-                            <span key={name} className={styles.tag}>{name}</span>
+                        {locations.map(((loc) => (
+                            <span key={loc.id} className={styles.tag}>{loc.location}</span>
                         )))}
                     </div>
                 </div>
