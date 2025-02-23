@@ -9,8 +9,6 @@ const locations = [
         variant: "Val50Met",
         reference: "Sousa et al. 1995",
         reference_link: "https://onlinelibrary.wiley.com/doi/abs/10.1002/ajmg.1320600606",
-
-
         description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
         Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. 
         Nulla facilisi. Praesent ac magna sit amet metus condimentum volutpat. 

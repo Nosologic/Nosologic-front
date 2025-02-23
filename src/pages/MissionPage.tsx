@@ -36,7 +36,7 @@ export default function MissionPage() {
                 <br/><br/>
 
                 </span>
-                    <span className={styles.mission_author}>
+                <span className={styles.mission_author}>
                     Valentijn van Dijk, scientific director Nosologic
                 </span>
             </div>
