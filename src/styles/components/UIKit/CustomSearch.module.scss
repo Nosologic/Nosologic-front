@@ -1,10 +1,10 @@
-@import "../../variables";
+@use "../../variables";
 
 // .search_container: Wrapper for the search section, contains search input and icon
 .search_container {
   display: flex;
   align-items: center;
-  background-color: $search-background;
+  background-color: variables.$search-background;
   border-radius: 8px;
   height: 34px;
 }
@@ -22,5 +22,5 @@
   outline: none;
   background-color: transparent;
   height: 100%;
-  @include h7;
+  @include variables.h7;
 }

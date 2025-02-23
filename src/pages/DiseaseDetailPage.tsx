@@ -9,10 +9,8 @@ export default function DiseaseDetailPage() {
     const numericId = Number(id ?? "0");
     const { name, locations, alt_names, locus, omim, description } = diseases[numericId - 1];
 
-    // State to track whether the "Locations" section is visible or not
     const [isLocationsVisible, setIsLocationsVisible] = useState(false);
 
-    // Toggle visibility when the "Locations" title is clicked
     const toggleLocationsVisibility = () => {
         setIsLocationsVisible((prev) => !prev);
     };
@@ -20,7 +18,7 @@ export default function DiseaseDetailPage() {
     return (
         <main className={styles.disease_detail_page_ctr}>
             <span className={styles.page_title}>
-                {name}:
+                {name}
             </span>
             <div className={styles.disease_info_ctr}>
                 <div className={styles.disease_info_left_section}>
@@ -61,9 +59,9 @@ export default function DiseaseDetailPage() {
                                         Alt. names:
                                     </th>
                                     <td>
-                                        <ul className={styles.table_data}>
+                                        <ul>
                                             {alt_names.map((an) => (
-                                                <li key={an} className={styles.list_item}>
+                                                <li key={an} className={styles.table_data}>
                                                     {an}
                                                 </li>
                                             ))}
@@ -80,7 +78,7 @@ export default function DiseaseDetailPage() {
                                     <th scope={"row"} className={styles.table_label}>
                                         Omim:
                                     </th>
-                                    <td className={styles.table_data}>{omim}</td>
+                                    <td className={styles.table_data} ><a href={`https://www.${omim}`}>{omim}</a></td>
                                 </tr>
                                 </tbody>
                             </table>

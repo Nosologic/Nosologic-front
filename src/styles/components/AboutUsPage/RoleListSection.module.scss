@@ -1,11 +1,11 @@
-@import "../../variables";
+@use "../../variables";
 
 .role_list_section {
 
   .about_role_title {
     margin-top: 24px;
-    @include title2;
-    color: $text;
+    @include variables.title2;
+    color: variables.$text;
   }
 
   .members_list {

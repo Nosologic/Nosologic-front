@@ -1,10 +1,10 @@
-@import '../../variables';
+@use '../../variables';
 
 .disease_card {
-  @include font-family;
+  @include variables.font-family;
   width: 100%;
   border-radius: 5px;
-  border: 1px solid $border_light;
+  border: 1px solid variables.$border_light;
   padding: 16px;
 
   .dc_upper_ctr {
@@ -31,16 +31,16 @@
 }
 
 .dc_name {
-  @include h5;
+  @include variables.h5;
   font-weight: 600;
-  color: $dark_blue;
+  color: variables.$dark_blue;
 }
 
 .fav_btn {
   height: 32px;
   width: 32px;
   background: none;
-  border: 1.5px solid $dark_blue;
+  border: 1.5px solid variables.$dark_blue;
   border-radius: 5px;
   display: flex;
   justify-content: center;
@@ -48,11 +48,11 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   &:hover {
-    background-color: $white;
+    background-color: variables.$white;
   }
 
   .fav_icon {
-    color: $dark_blue;
+    color: variables.$dark_blue;
     height: 32px;
     width: 32px;
   }
@@ -60,7 +60,7 @@
 
 
 .dc_info_title {
-  color: $text;
+  color: variables.$text;
   font-weight: 500;
   font-size: 18px;
 }
@@ -71,7 +71,7 @@
   max-width: 200px;
   overflow-x: auto;
   white-space: nowrap;
-  color: $text_light;
+  color: variables.$text_light;
   padding-bottom: 4px;
   gap: 4px;
 
@@ -81,7 +81,7 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: $scrollbar;
+    background-color: variables.$scrollbar;
     border-radius: 8px;
     border: 4px solid transparent;
   }
@@ -92,7 +92,7 @@
 }
 
 .tag {
-  background-color: $intense_aqua;
+  background-color: variables.$intense_aqua;
   color: #000;
   font-weight: bold;
   padding: 2px 4px;

@@ -1,11 +1,11 @@
-@import '../variables';
+@use '../variables';
 
 .diseases_page_ctr {
   gap: 8px;
 }
 
 .page_title {
-  @include title1;
+  @include variables.title1;
 }
 
 .search_container {

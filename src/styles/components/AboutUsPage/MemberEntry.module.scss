@@ -1,4 +1,4 @@
-@import "../../variables";
+@use "../../variables";
 
 .about_member_entry {
   display: flex;
@@ -8,7 +8,7 @@
 }
 
 .about_member_info {
-  @include font-family;
+  @include variables.font-family;
   font-size: 18px;
 
 }

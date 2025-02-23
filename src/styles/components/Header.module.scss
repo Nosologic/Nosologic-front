@@ -1,4 +1,4 @@
-@import "../variables";
+@use "../variables";
 
 
 // .header_ctr: The container for the header
@@ -7,7 +7,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-bottom: 1px solid $header_border;
+  border-bottom: 1px solid variables.$header_border;
 }
 
 // .logo: Styles for the logo, circular with a fixed size
@@ -54,32 +54,32 @@
       padding: 0 4px;
       // &:hover: Hover effect for navigation links
       &:hover {
-        color: $text_hover;
+        color: variables.$text_hover;
       }
     }
 
     // .nav_link: Default styles for navigation links
     .nav_link {
-      color: $text_not_active;
+      color: variables.$text_not_active;
     }
 
     // .active: Styles for the active navigation link
     .active {
-      color: $text;
+      color: variables.$text;
     }
   }
 }
 
 // .navigation_btn: Additional styles for navigation buttons
 .navigation_btn {
-  @include h6;
-  @include label;
+  @include variables.h6;
+  @include variables.label;
   height: 100%;
 }
 
 .sign_in_btn {
-  @include btn;
-  @include h7;
+  @include variables.btn;
+  @include variables.h7;
   height: 48%;
   background: none;
   border: none;
@@ -87,12 +87,12 @@
 }
 
 .sign_up_btn {
-  @include btn;
-  @include h7;
+  @include variables.btn;
+  @include variables.h7;
   height: 48%;
   background: none;
   border-radius: 4px;
-  border: 1px solid $border_dark;
+  border: 1px solid variables.$border_dark;
   padding: 0 8px;
 }
 

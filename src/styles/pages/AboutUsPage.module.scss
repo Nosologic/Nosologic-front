@@ -1,4 +1,4 @@
-@import "../variables";
+@use "../variables";
 
 .about_page_ctr {
 
@@ -6,22 +6,22 @@
 }
 
 .page_title {
-  @include title1;
+  @include variables.title1;
 }
 
 .about_page_text {
-  @include font-family;
+  @include variables.font-family;
   font-size: 18px;
-  color: $text;
+  color: variables.$text;
   line-height: 1.6;
 }
 
 .about_section {
   margin-top: 16px;
   .about_role_title {
-    @include h5;
+    @include variables.h5;
     font-weight: 500;
-    color: $text;
+    color: variables.$text;
   }
 
 }

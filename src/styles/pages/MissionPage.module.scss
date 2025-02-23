@@ -1,4 +1,4 @@
-@import '../variables';
+@use '../variables';
 
 
 .mission_page_ctr {
@@ -12,38 +12,38 @@
   align-items: center;
   flex-direction: column;
   .nosologic_title {
-    @include h1;
-    @include font-family-official;
+    @include variables.h1;
+    @include variables.font-family-official;
     font-weight: 700;
-    color: $text;
+    color: variables.$text;
   }
   .motto {
-    @include h7;
-    color: $text_light;
+    @include variables.h7;
+    color: variables.$text_light;
   }
 }
 
 .mission_text_ctr {
   .mission_label {
-    @include title1;
-    @include font-family-official;
+    @include variables.title1;
+    @include variables.font-family-official;
     margin: 2% auto;
   }
 
   .page_text {
-    @include font-family;
+    @include variables.font-family;
     font-size: 18px;
     white-space: pre-wrap;
     word-wrap: break-word;
-    color: $text_light;
+    color: variables.$text_light;
     line-height: 1.6;
   }
   .mission_ref {
-    color: $dark_blue;
+    color: variables.$dark_blue;
   }
 
   .mission_author {
-    color: $dark_blue;
+    color: variables.$dark_blue;
     font-weight: 500;
   }
 }
