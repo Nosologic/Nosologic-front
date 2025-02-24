@@ -5,7 +5,7 @@ const diseases = [
         locations: [{id: 1, location: 'Troodos Mountains, Cyprus'}],
         alt_names: ['C3 Glomerulopathy 3', 'CFHR5 Nephropathy'],
         locus: 'CFHR5',
-        omim: 'https://omim.org/entry/608593#0001',
+        omim: 'https://monarchinitiative.org/MONDO:0013892',
         description: 'This very rare hereditary disease is only known to occur in people of Cypriot descent. All patients carry the same mutation; it seems to originate in the Troodos mountains in the center of this eastern Mediterranean island. The disease shows a so-called autosomal dominant inheritance pattern, which means it runs in families. The symptoms are caused by a gradual accumulation of the immune system protein C3 in the glomeruli, tiny filtering devices in the kidneys. Symptoms usually start manifesting themselves around the fourth decade of life. Over time, these kidney symptoms worsen. with 50 % of patients progressing to kidney failure within a decade if left untreated. A kidney transplantation can delay the process, but the disease has no cure.\n' +
             '\n' +
             'Carter & Nguyen have offered an explanation of why mutations linked to serious genetic diseases such as these still go around in some populations. The idea is that, apart from being linked to a disease, they also confer an evolutionary advantage to their carriers, leading to a trade-off. If this advantage is specific to a certain type of environment, over time this can result in a local accumulation of a mutation that is very rare or absent elsewhere. \n' +
@@ -20,6 +20,7 @@ const diseases = [
             '\n' +
             ' It is this kind of new knowledge that evolutionary health geography can generate.',
     },
+
     {
         id: 2,
         name: 'Transthyretin Amyloidosis',
@@ -57,6 +58,25 @@ const diseases = [
             'These are some of the empirical questions raised by the interesting proposal of these two Swedish authors. We believe it does have predictive power, but can be improved upon with additional ecological research.\n' +
             '\n' // Provide additional information about this disease here for display on the detailed page
     },
+
+    {
+    id: 3,
+    name: 'Familial hypercholesterolemia',
+    locations: [
+    { id: 14, location: 'Oaxaca, Mexico' },
+    { id: 15, location: 'West-Friesland, Netherlands' },
+    { id: 16, location: 'Noord and Zuid Beveland, Netherlands' }
+],
+    alt_names: [
+    'Familial defective apolipoprotein B-100'
+],
+    locus: 'LDLR',
+    omim: 'https://monarchinitiative.org/MONDO:0005439',
+    description: 'One of the most common, if not the most common, hereditary disease in the world. It is characterized by more than twofold elevated ldl-c cholesterol levels, already at birth. This leads to atherosclerosis, often resulting in cardiovascular disease, heart attacks and strokes.\n' +
+'\n' +
+'Carrying just one pathogenic variant at the LDLR, ApoB and PCSK9 loci is enough to be at risk. This means that parents, siblings and children of a carrier all have a 50% chance of being a carrier as well, an inheritance pattern called autosomal dominant.  Because the disease can be treated with statins and other forms of lipid lowering medication, which considerably enhances the life expectancy of patients, proactive diagnosis and screening can save lives. Accurate knowledge of geographical and ethnic clusters of the disease can help with this task.\n' +
+'\n' // Provide additional information about this disease here for display on the detailed page
+},
 ];
 
 
