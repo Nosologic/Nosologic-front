@@ -53,5 +53,3 @@ This will download all the necessary project dependencies specified in the `pack
    npm run dev
 ```
 1. Once the server is running, open your web browser and navigate to the provided URL (`http://localhost:5173` in our case).
-
-
