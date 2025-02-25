@@ -19,11 +19,7 @@ export default function ClusterDetailPage() {
             variant: "",
             reference: ["", ""],
         },
-        text_data = {
-            description: "",
-            causes: "",
-            thoughts: "",
-        },
+        text_data = {}
     } = location || {};
 
     // Map all data fields into a key-value structure
@@ -36,11 +32,24 @@ export default function ClusterDetailPage() {
                 {table_data.reference[1]}</a> },
     ];
 
-    const text_fields = [
-        ...("description" in text_data ? [{ label: "Description", value: text_data.description }] : []),
-        ...("causes" in text_data ? [{ label: "Causes", value: text_data.causes }] : []),
-        ...("thoughts" in text_data ? [{ label: "Thoughts", value: text_data.thoughts }] : []),
-    ];
+    const capitalize = (str: string) => {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    type TextField = {
+        label: string;
+        value: string | string[];
+    };
+
+    const text_fields: TextField[] =
+        Object.entries(text_data)
+            .filter((value) => value !== undefined)
+            .map(([key, value]) => ({
+                label: capitalize(key),
+                value: Array.isArray(value) ? value as string[] : String(value) // Normalize value to string or string[]
+            }));
+
+
     return (
         <main className={styles.cluster_detail_page_ctr}>
             <span className={styles.page_title}>{name}</span>

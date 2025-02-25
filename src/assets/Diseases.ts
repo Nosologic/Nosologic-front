@@ -64,6 +64,7 @@ Roos and Wärmländer restrict their model to just one subtype of hATTR, associa
 These are some of the empirical questions raised by the interesting proposal of these two Swedish authors. We believe it does have predictive power, but can be improved upon with additional ecological research.`,
             causes: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
             consequences: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
+            treatment: `ABCDEFGHIJKLMNOPQRSTUVWXYZ`,
         },
         
     },

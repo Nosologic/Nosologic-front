@@ -15,11 +15,7 @@ export default function DiseaseDetailPage() {
         alt_names,
         locus,
         mondo,
-        text_data = {
-            description: "",
-            causes: "",
-            consequences: "",
-        }
+        text_data = {},
     } = diseases[numericId - 1];
 
     const dataRows = [
@@ -28,16 +24,17 @@ export default function DiseaseDetailPage() {
         { label: "Mondo", value: <a href={mondo} target="_blank" rel="noopener noreferrer">{mondo.slice(8)}</a> },
     ];
 
-    const text_fields = [
-        ...("description" in text_data && text_data.description !== undefined ?
-            [{ label: "Description", value: text_data.description }] : []),
+    const capitalize = (str: string) => {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
 
-        ...("causes" in text_data && text_data.causes !== undefined ?
-            [{ label: "Causes", value: text_data.causes }] : []),
-
-        ...("consequences" in text_data && text_data.consequences !== undefined ?
-            [{ label: "Consequences", value: text_data.consequences }] : []),
-    ];
+    const text_fields =
+        Object.entries(text_data)
+            .filter((value) => value !== undefined)
+            .map(([key, value]) => ({
+                label: capitalize(key),
+                value: Array.isArray(value) ? value as string[] : String(value)
+            }));
 
     const [isLocationsVisible, setIsLocationsVisible] = useState(false);
 
