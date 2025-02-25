@@ -1,40 +1,23 @@
-import { useState } from "react";
+import {useState} from "react";
 import styles from "../styles/pages/DiseaseDetailPage.module.scss";
 import {NavLink, useParams} from "react-router-dom";
 import diseases from "../assets/Diseases.ts";
 import {GoChevronDown, GoChevronRight} from "react-icons/go";
 import DetailTextSection from "../components/UIKit/DetailTextSection.tsx";
+import parseData from "../scripts/ParseData.tsx";
 
 export default function DiseaseDetailPage() {
     const { id } = useParams<{ id: string }>();
     const numericId = Number(id ?? "0");
-    // TODO: use otherFields to improve scalability in case many new fields created
+
     const {
         name,
         locations,
-        alt_names,
-        locus,
-        mondo,
+        table_data = {},
         text_data = {},
     } = diseases[numericId - 1];
 
-    const dataRows = [
-        { label: "Alt. names", value: alt_names },
-        { label: "Locus", value: locus },
-        { label: "Mondo", value: <a href={mondo} target="_blank" rel="noopener noreferrer">{mondo.slice(8)}</a> },
-    ];
-
-    const capitalize = (str: string) => {
-        return str.charAt(0).toUpperCase() + str.slice(1);
-    }
-
-    const text_fields =
-        Object.entries(text_data)
-            .filter((value) => value !== undefined)
-            .map(([key, value]) => ({
-                label: capitalize(key),
-                value: Array.isArray(value) ? value as string[] : String(value)
-            }));
+    const { dataRows, text_fields } = parseData({table_data, text_data});
 
     const [isLocationsVisible, setIsLocationsVisible] = useState(false);
 

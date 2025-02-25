@@ -5,8 +5,8 @@ import FavButton from "../UIKit/FavButton.tsx";
 
 
 export default function DiseaseCard({id}: Readonly<{ id: number }>) {
-    const { name, locations, alt_names, locus } = diseases[id - 1];
-
+    const { name, locations, table_data } = diseases[id - 1];
+    const { alt_names, locus } = table_data;
     return (
         <div className={styles.disease_card}>
             <div className={styles.dc_upper_ctr}>

@@ -3,9 +3,12 @@ const diseases = [
         id: 1,
         name: 'C3 Glomerulonephritis',
         locations: [{id: 1, location: 'Troodos Mountains, Cyprus'}],
-        alt_names: ['C3 Glomerulopathy 3', 'CFHR5 Nephropathy'],
-        locus: ['CFHR5', 'ABC'],
-        mondo: 'https://omim.org/entry/608593#0001',
+        table_data: {
+            alt_names: ['C3 Glomerulopathy 3', 'CFHR5 Nephropathy'],
+            locus: ['CFHR5', 'ABC'],
+            mondo: ['https://omim.org/entry/608593#0001', 'omim.org/entry/608593#0001'],
+        },
+
         text_data: {
             description: `
 This very rare hereditary disease is only known to occur in people of Cypriot descent. All patients carry the same mutation; it seems to originate in the Troodos mountains in the center of this eastern Mediterranean island. The disease shows a so-called autosomal dominant inheritance pattern, which means it runs in families. The symptoms are caused by a gradual accumulation of the immune system protein C3 in the glomeruli, tiny filtering devices in the kidneys. Symptoms usually start manifesting themselves around the fourth decade of life. Over time, these kidney symptoms worsen, with 50% of patients progressing to kidney failure within a decade if left untreated. A kidney transplantation can delay the process, but the disease has no cure.
@@ -42,15 +45,18 @@ It is this kind of new knowledge that evolutionary health geography can generate
             { id: 12, location: 'Västerbotten and Norrbotten provinces, Sweden' },
             { id: 13, location: 'Vakarel, Bulgaria' }
         ],
-        alt_names: [
-            'Familial Amyloid Polyneuropathy',
-            'Andrade disease',
-            'Transthyretin-related hereditary amyloidosis',
-            'hATTR',
-            'Doença dos Pezinhos'
-        ],
-        locus: ['TTR'],
-        mondo: 'https://omim.org/entry/105210',
+        table_data: {
+            alt_names: [
+                'Familial Amyloid Polyneuropathy',
+                'Andrade disease',
+                'Transthyretin-related hereditary amyloidosis',
+                'hATTR',
+                'Doença dos Pezinhos'
+            ],
+            locus: ['TTR'],
+            mondo: ['https://omim.org/entry/105210', 'omim.org/entry/105210'],
+        },
+
         text_data: {
             description: `
 This hereditary disease is unusual because it seems to originate from only a few places in the world.
