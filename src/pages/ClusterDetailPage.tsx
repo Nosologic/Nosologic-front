@@ -1,7 +1,7 @@
 import styles from "../styles/pages/ClusterDetailPage.module.scss";
 import { useParams } from "react-router-dom";
 import locations from "../assets/Locations.ts";
-import TextSection from "../components/ClusterDetailPage/TextSection.tsx";
+import DetailTextSection from "../components/UIKit/DetailTextSection.tsx";
 
 export default function ClusterDetailPage() {
     const { id } = useParams<{ id: string }>();
@@ -21,7 +21,7 @@ export default function ClusterDetailPage() {
         },
         text_data = {
             description: "",
-            causes: [],
+            causes: "",
             thoughts: "",
         },
     } = location || {};
@@ -37,18 +37,16 @@ export default function ClusterDetailPage() {
     ];
 
     const text_fields = [
-        { label: "Description", value: text_data.description },
-        { label: "Causes", value: text_data.causes },
-        { label: "Thoughts", value: text_data.thoughts}
-    ]
-
+        ...("description" in text_data ? [{ label: "Description", value: text_data.description }] : []),
+        ...("causes" in text_data ? [{ label: "Causes", value: text_data.causes }] : []),
+        ...("thoughts" in text_data ? [{ label: "Thoughts", value: text_data.thoughts }] : []),
+    ];
     return (
         <main className={styles.cluster_detail_page_ctr}>
             <span className={styles.page_title}>{name}</span>
-            {/* TODO: Make sure it is a component */}
             {text_fields.map((field, index) => (
-                index !== 0 ? <TextSection text_fields_data={field} key={field.label} /> :
-                <TextSection text_fields_data={field} key={field.label} dataRows={dataRows}/>
+                index !== 0 ? <DetailTextSection text_fields_data={field} key={field.label} /> :
+                <DetailTextSection text_fields_data={field} key={field.label} dataRows={dataRows}/>
             ))}
 
         </main>

@@ -3,18 +3,40 @@ import styles from "../styles/pages/DiseaseDetailPage.module.scss";
 import {NavLink, useParams} from "react-router-dom";
 import diseases from "../assets/Diseases.ts";
 import {GoChevronDown, GoChevronRight} from "react-icons/go";
-import DataTable from "../components/UIKit/DataTable.tsx";
+import DetailTextSection from "../components/UIKit/DetailTextSection.tsx";
 
 export default function DiseaseDetailPage() {
     const { id } = useParams<{ id: string }>();
     const numericId = Number(id ?? "0");
     // TODO: use otherFields to improve scalability in case many new fields created
-    const { name, locations, alt_names, locus, mondo, description } = diseases[numericId - 1];
+    const {
+        name,
+        locations,
+        alt_names,
+        locus,
+        mondo,
+        text_data = {
+            description: "",
+            causes: "",
+            consequences: "",
+        }
+    } = diseases[numericId - 1];
 
     const dataRows = [
         { label: "Alt. names", value: alt_names },
         { label: "Locus", value: locus },
         { label: "Mondo", value: <a href={mondo} target="_blank" rel="noopener noreferrer">{mondo.slice(8)}</a> },
+    ];
+
+    const text_fields = [
+        ...("description" in text_data && text_data.description !== undefined ?
+            [{ label: "Description", value: text_data.description }] : []),
+
+        ...("causes" in text_data && text_data.causes !== undefined ?
+            [{ label: "Causes", value: text_data.causes }] : []),
+
+        ...("consequences" in text_data && text_data.consequences !== undefined ?
+            [{ label: "Consequences", value: text_data.consequences }] : []),
     ];
 
     const [isLocationsVisible, setIsLocationsVisible] = useState(false);
@@ -54,17 +76,10 @@ export default function DiseaseDetailPage() {
                             </div>
                         )}
                     </div>
-                    <div>
-                        <span className={styles.disease_info_left_section_title}>
-                            Description:
-                        </span>
-                        <div>
-                            <DataTable caption={name} dataRows={dataRows}/>
-                            <p className={styles.disease_info_left_section_text}>
-                                {description}
-                            </p>
-                        </div>
-                    </div>
+                    {text_fields.map((field, index) => (
+                        index !== 0 ? <DetailTextSection text_fields_data={field} key={field.label} /> :
+                            <DetailTextSection text_fields_data={field} key={field.label} dataRows={dataRows}/>
+                    ))}
                 </div>
             </div>
         </main>

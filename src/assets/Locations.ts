@@ -62,7 +62,6 @@ const locations = [
             velit non blandit. Sed venenatis pretium vehicula.
             `,
             causes: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
-            thoughts: `ABCDEFGHIJKLMNOPQRSTUVWXYZ`,
         }
 
     }

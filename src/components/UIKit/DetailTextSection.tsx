@@ -1,6 +1,6 @@
 import {JSX} from "react";
 import styles from "../../styles/components/ClusterDetailPage/TextSection.module.scss";
-import DataTable from "../UIKit/DataTable.tsx";
+import DataTable from "./DataTable.tsx";
 
 interface TextSectionProps {
     dataRows?:
@@ -15,7 +15,7 @@ interface TextSectionProps {
     }
 }
 
-export default function TextSection({ dataRows, text_fields_data } : Readonly<TextSectionProps>) {
+export default function DetailTextSection({ dataRows, text_fields_data } : Readonly<TextSectionProps>) {
 
     return (
         <div className={styles.cluster_detail_info}>
