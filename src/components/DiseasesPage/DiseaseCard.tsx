@@ -35,10 +35,13 @@ export default function DiseaseCard({id}: Readonly<{ id: number }>) {
                         )))}
                     </div>
                 </div>
-
                 <div className={styles.dc_info_ctr}>
                     <span className={styles.dc_info_title}>Locus:</span>
-                    <span className={styles.tag}>{locus}</span>
+                    <div className={styles.dc_info_overflow}>
+                        {locus.map(((locus) => (
+                            <span key={locus} className={styles.tag}>{locus}</span>
+                        )))}
+                    </div>
                 </div>
             </div>
 

@@ -1,7 +1,7 @@
 import styles from "../styles/pages/ClusterDetailPage.module.scss";
 import { useParams } from "react-router-dom";
 import locations from "../assets/Locations.ts";
-import DataTable from "../components/UIKit/DataTable.tsx";
+import TextSection from "../components/ClusterDetailPage/TextSection.tsx";
 
 export default function ClusterDetailPage() {
     const { id } = useParams<{ id: string }>();
@@ -12,37 +12,44 @@ export default function ClusterDetailPage() {
     // Extract location fields with defaults
     const {
         name = "N/A",
-        disease = "N/A",
-        alt_names = [],
-        phenotype = "N/A",
-        gene = "N/A",
-        variant = "N/A",
-        reference = "N/A",
-        reference_link = "N/A",
-        description = "N/A",
+        table_data = {
+            disease: "",
+            phenotype: "",
+            gene: "",
+            variant: "",
+            reference: ["", ""],
+        },
+        text_data = {
+            description: "",
+            causes: [],
+            thoughts: "",
+        },
     } = location || {};
 
     // Map all data fields into a key-value structure
     const dataRows = [
-        { label: "Disease", value: disease },
-        { label: "Alt. names", value: alt_names },
-        { label: "Phenotype", value: phenotype },
-        { label: "Gene", value: gene },
-        { label: "Variant", value: variant },
-        { label: "Reference", value: <a href={reference_link} target="_blank" rel="noopener noreferrer">{reference}</a> },
+        { label: "Disease", value: table_data.disease },
+        { label: "Phenotype", value: table_data.phenotype },
+        { label: "Gene", value: table_data.gene },
+        { label: "Variant", value: table_data.variant },
+        { label: "Reference", value: <a href={table_data.reference[0]} target="_blank" rel="noopener noreferrer">
+                {table_data.reference[1]}</a> },
     ];
+
+    const text_fields = [
+        { label: "Description", value: text_data.description },
+        { label: "Causes", value: text_data.causes },
+        { label: "Thoughts", value: text_data.thoughts}
+    ]
 
     return (
         <main className={styles.cluster_detail_page_ctr}>
             <span className={styles.page_title}>{name}</span>
-            <div className={styles.cluster_detail_info}>
-                <span className={styles.page_subtitle}>Description</span>
-                <div>
-                    <DataTable dataRows={dataRows}/>
-                    <p className={styles.cluster_info_text}>{description}</p>
-                </div>
-
-            </div>
+            {/* TODO: Make sure it is a component */}
+            {text_fields.map((field, index) => (
+                index !== 0 ? <TextSection text_fields_data={field} key={field.label} /> :
+                <TextSection text_fields_data={field} key={field.label} dataRows={dataRows}/>
+            ))}
 
         </main>
     );

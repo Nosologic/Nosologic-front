@@ -8,12 +8,13 @@ import DataTable from "../components/UIKit/DataTable.tsx";
 export default function DiseaseDetailPage() {
     const { id } = useParams<{ id: string }>();
     const numericId = Number(id ?? "0");
-    const { name, locations, alt_names, locus, omim, description } = diseases[numericId - 1];
+    // TODO: use otherFields to improve scalability in case many new fields created
+    const { name, locations, alt_names, locus, mondo, description } = diseases[numericId - 1];
 
     const dataRows = [
         { label: "Alt. names", value: alt_names },
         { label: "Locus", value: locus },
-        { label: "Omim", value: <a href={omim} target="_blank" rel="noopener noreferrer">{omim.slice(8)}</a> },
+        { label: "Mondo", value: <a href={mondo} target="_blank" rel="noopener noreferrer">{mondo.slice(8)}</a> },
     ];
 
     const [isLocationsVisible, setIsLocationsVisible] = useState(false);

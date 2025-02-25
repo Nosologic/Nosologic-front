@@ -1,0 +1,16 @@
+@use "../../variables";
+
+.page_subtitle {
+  @include variables.title2;
+}
+
+.cluster_detail_info {
+  margin-top: 16px;
+}
+
+.cluster_info_text {
+  @include variables.h7;
+  color: variables.$text;
+  line-height: 1.6;
+  width: 100%;
+}

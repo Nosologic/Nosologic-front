@@ -4,8 +4,8 @@ const diseases = [
         name: 'C3 Glomerulonephritis',
         locations: [{id: 1, location: 'Troodos Mountains, Cyprus'}],
         alt_names: ['C3 Glomerulopathy 3', 'CFHR5 Nephropathy'],
-        locus: 'CFHR5',
-        omim: 'https://omim.org/entry/608593#0001',
+        locus: ['CFHR5', 'ABC'],
+        mondo: 'https://omim.org/entry/608593#0001',
         description: 'This very rare hereditary disease is only known to occur in people of Cypriot descent. All patients carry the same mutation; it seems to originate in the Troodos mountains in the center of this eastern Mediterranean island. The disease shows a so-called autosomal dominant inheritance pattern, which means it runs in families. The symptoms are caused by a gradual accumulation of the immune system protein C3 in the glomeruli, tiny filtering devices in the kidneys. Symptoms usually start manifesting themselves around the fourth decade of life. Over time, these kidney symptoms worsen. with 50 % of patients progressing to kidney failure within a decade if left untreated. A kidney transplantation can delay the process, but the disease has no cure.\n' +
             '\n' +
             'Carter & Nguyen have offered an explanation of why mutations linked to serious genetic diseases such as these still go around in some populations. The idea is that, apart from being linked to a disease, they also confer an evolutionary advantage to their carriers, leading to a trade-off. If this advantage is specific to a certain type of environment, over time this can result in a local accumulation of a mutation that is very rare or absent elsewhere. \n' +
@@ -44,8 +44,8 @@ const diseases = [
             'hATTR',
             'Doença dos Pezinhos'
         ],
-        locus: 'TTR',
-        omim: 'https://omim.org/entry/105210',
+        locus: ['TTR'],
+        mondo: 'https://omim.org/entry/105210',
         description: 'This hereditary disease is unusual because it seems to originate from only a few places in the world.\n' +
             '\n' +
             'In 2024, Per Roos and Sebastian Wärmländer of the Karolinska Institute in Stockholm, Sweden, remarked that the largest clusters of the disease have something in common: they are all located in or near ancient mining districts. They argue that this implies exposure to heavy metals may be one of its causes. If true, carriers of certain TTR mutations would be more likely to develop the disease when exposed to high levels of heavy metals. The authors do not specify which ones they think are the culprit.\n' +
