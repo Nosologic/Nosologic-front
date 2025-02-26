@@ -7,6 +7,9 @@ const locations = [
             phenotype: "Polyneuropathy",
             gene: "TTR",
             variant: "Val50Met",
+            // all the links must be in the following format
+            // key (displayed label): [link it points to, the displayed text]
+            // this is the record for reference at https://nosologic.netlify.app/clusters/8
             reference: ["https://onlinelibrary.wiley.com/doi/abs/10.1002/ajmg.1320600606", "Sousa et al. 1995"],
         },
         text_data: {
