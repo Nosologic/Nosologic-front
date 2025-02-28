@@ -6,7 +6,7 @@ const diseases = [
         table_data: {
             alt_names: ['C3 Glomerulopathy 3', 'CFHR5 Nephropathy'],
             locus: ['CFHR5', 'ABC'],
-            mondo: ['https://omim.org/entry/608593#0001', 'omim.org/entry/608593#0001'],
+            mondo: ['https://monarchinitiative.org/MONDO:0013892', 'monarchinitiative.org/MONDO:0013892'],
         },
 
         text_data: {
@@ -32,18 +32,18 @@ It is this kind of new knowledge that evolutionary health geography can generate
         id: 2,
         name: 'Transthyretin Amyloidosis',
         locations: [
-            { id: 2, location: 'Southern West-Africa' },
-            { id: 3, location: 'Alaró, Majorca, Spain' },
-            { id: 4, location: 'Arao, Kumamoto, Japan' },
-            { id: 5, location: 'Covilhã, Portugal' },
-            { id: 6, location: 'Donegal province, Ireland' },
-            { id: 7, location: 'Ogawa, Japan' },
-            { id: 8, location: 'Póvoa de Varzim and Vila do Conde, Portugal' },
-            { id: 9, location: 'Puente de Ixtla, Mexico' },
-            { id: 10, location: 'San Luis de la Paz, Mexico' },
-            { id: 11, location: 'Valverde del Camino, Spain' },
-            { id: 12, location: 'Västerbotten and Norrbotten provinces, Sweden' },
-            { id: 13, location: 'Vakarel, Bulgaria' }
+            {id: 2, location: 'Southern West-Africa'},
+            {id: 3, location: 'Alaró, Majorca, Spain'},
+            {id: 4, location: 'Arao, Kumamoto, Japan'},
+            {id: 5, location: 'Covilhã, Portugal'},
+            {id: 6, location: 'Donegal province, Ireland'},
+            {id: 7, location: 'Ogawa, Japan'},
+            {id: 8, location: 'Póvoa de Varzim and Vila do Conde, Portugal'},
+            {id: 9, location: 'Puente de Ixtla, Mexico'},
+            {id: 10, location: 'San Luis de la Paz, Mexico'},
+            {id: 11, location: 'Valverde del Camino, Spain'},
+            {id: 12, location: 'Västerbotten and Norrbotten provinces, Sweden'},
+            {id: 13, location: 'Vakarel, Bulgaria'}
         ],
         table_data: {
             alt_names: [
@@ -72,7 +72,29 @@ These are some of the empirical questions raised by the interesting proposal of 
             consequences: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
             treatment: `ABCDEFGHIJKLMNOPQRSTUVWXYZ`,
         },
-        
+    },
+    {
+        id: 3,
+        name: 'Familial hypercholesterolemia',
+        locations: [
+            { id: 14, location: 'Oaxaca, Mexico' },
+            { id: 15, location: 'West-Friesland, Netherlands' },
+            { id: 16, location: 'Noord and Zuid Beveland, Netherlands' }
+        ],
+        table_data: {
+            alt_names: [
+                'Familial defective apolipoprotein B-100'
+            ],
+            locus: ['LDLR'],
+            mondo: ['https://monarchinitiative.org/MONDO:0005439', 'monarchinitiative.org/MONDO:0005439'],
+        },
+        text_data: {
+            description: `One of the most common, if not the most common, hereditary disease in the world. It is characterized by more than twofold elevated ldl-c cholesterol levels, already at birth. This leads to atherosclerosis, often resulting in cardiovascular disease, heart attacks and strokes.
+
+Carrying just one pathogenic variant at the LDLR, ApoB and PCSK9 loci is enough to be at risk. This means that parents, siblings and children of a carrier all have a 50% chance of being a carrier as well, an inheritance pattern called autosomal dominant.  Because the disease can be treated with statins and other forms of lipid lowering medication, which considerably enhances the life expectancy of patients, proactive diagnosis and screening can save lives. Accurate knowledge of geographical and ethnic clusters of the disease can help with this task.
+
+`
+        },
     },
 ];
 

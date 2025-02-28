@@ -67,7 +67,33 @@ const locations = [
             causes: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
             notes: `abracadabra`,
         }
+    },
+    {
+        id: 14,
+        name: "Oaxaca, Mexico",
+        table_data: {
+            disease: "Familial hypercholesterolemia",
+            phenotype: "elevated ldl-cholesterol",
+            gene: "LDLR",
+            variant: "c.2271del",
+            reference: ["https://www.sciencedirect.com/science/article/abs/pii/S0188440924000249", "Rodriguez-Gutiérrez et al. 2024"]
+        },
 
+        text_data: {
+            description: `A remarkably high prevalence of 7,8% was found in several villages in the 
+        Mexican state of Oaxaca. It is the highest in the world.
+        
+
+        Sed iaculis nulla eget eros auctor maximus. Donec in sagittis erat, quis aliquam ligula. 
+        Donec consequat dignissim faucibus. Maecenas sollicitudin, justo eu viverra fringilla, 
+        odio ex faucibus mauris, id aliquet nisl nunc et lectus. Suspendisse potenti. Ut quis 
+        ornare dui. Curabitur sit amet turpis lectus. Proin accumsan sagittis eros, a semper 
+        justo aliquet porta. Nam malesuada quis nulla sed ultrices. In vel auctor ligula. 
+        Duis fringilla ex ut ex commodo, eget feugiat neque interdum. Integer venenatis arcu 
+        id tincidunt condimentum. Cras finibus ligula in ligula varius dapibus. In luctus ut 
+        velit non blandit. Sed venenatis pretium vehicula.
+        `
+        },
     }
 ]
 
