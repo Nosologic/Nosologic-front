@@ -1,8 +1,9 @@
 const diseases = [
     {
         id: 1,
+        visibility: false,
         name: 'C3 Glomerulonephritis',
-        locations: [{id: 1, location: 'Troodos Mountains, Cyprus'}],
+        locations: [{id: 1, location: 'Troodos Mountains, Cyprus', visibility: false}],
         table_data: {
             alt_names: ['C3 Glomerulopathy 3', 'CFHR5 Nephropathy'],
             locus: ['CFHR5', 'ABC'],
@@ -30,20 +31,21 @@ It is this kind of new knowledge that evolutionary health geography can generate
     },
     {
         id: 2,
+        visibility: false,
         name: 'Transthyretin Amyloidosis',
         locations: [
-            {id: 2, location: 'Southern West-Africa'},
-            {id: 3, location: 'Alaró, Majorca, Spain'},
-            {id: 4, location: 'Arao, Kumamoto, Japan'},
-            {id: 5, location: 'Covilhã, Portugal'},
-            {id: 6, location: 'Donegal province, Ireland'},
-            {id: 7, location: 'Ogawa, Japan'},
-            {id: 8, location: 'Póvoa de Varzim and Vila do Conde, Portugal'},
-            {id: 9, location: 'Puente de Ixtla, Mexico'},
-            {id: 10, location: 'San Luis de la Paz, Mexico'},
-            {id: 11, location: 'Valverde del Camino, Spain'},
-            {id: 12, location: 'Västerbotten and Norrbotten provinces, Sweden'},
-            {id: 13, location: 'Vakarel, Bulgaria'}
+            {id: 2, location: 'Southern West-Africa', visibility: false},
+            {id: 3, location: 'Alaró, Majorca, Spain', visibility: false},
+            {id: 4, location: 'Arao, Kumamoto, Japan', visibility: false},
+            {id: 5, location: 'Covilhã, Portugal', visibility: false},
+            {id: 6, location: 'Donegal province, Ireland', visibility: false},
+            {id: 7, location: 'Ogawa, Japan', visibility: false},
+            {id: 8, location: 'Póvoa de Varzim and Vila do Conde, Portugal', visibility: false},
+            {id: 9, location: 'Puente de Ixtla, Mexico', visibility: false},
+            {id: 10, location: 'San Luis de la Paz, Mexico', visibility: false},
+            {id: 11, location: 'Valverde del Camino, Spain', visibility: false},
+            {id: 12, location: 'Västerbotten and Norrbotten provinces, Sweden', visibility: false},
+            {id: 13, location: 'Vakarel, Bulgaria', visibility: false}
         ],
         table_data: {
             alt_names: [
@@ -75,11 +77,12 @@ These are some of the empirical questions raised by the interesting proposal of 
     },
     {
         id: 3,
+        visibility: true,
         name: 'Familial hypercholesterolemia',
         locations: [
-            { id: 14, location: 'Oaxaca, Mexico' },
-            { id: 15, location: 'West-Friesland, Netherlands' },
-            { id: 16, location: 'Noord and Zuid Beveland, Netherlands' }
+            { id: 14, location: 'Oaxaca, Mexico', visibility: true },
+            { id: 15, location: 'West-Friesland, Netherlands', visibility: false },
+            { id: 16, location: 'Noord and Zuid Beveland, Netherlands', visibility: false }
         ],
         table_data: {
             alt_names: [

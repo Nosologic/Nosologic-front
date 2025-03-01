@@ -11,7 +11,9 @@ export default function DiseasesPage() {
             </span>
             <CustomSearch className={styles.search_container}/>
             {/* Loops through all the records from Diseases.ts and creates a DiseaseCard for each */}
-            {diseases.map( (dis) => (
+            {diseases
+                .filter( (dis) => dis.visibility)
+                .map( (dis) => (
                 <DiseaseCard key={dis.id} id={dis.id}/>
             ))}
         </main>

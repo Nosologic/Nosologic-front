@@ -44,7 +44,9 @@ export default function DiseaseDetailPage() {
                         {/* Conditionally render the locations list */}
                         {isLocationsVisible && (
                             <div className={styles.locations_list}>
-                                {locations.map((loc) => (
+                                {locations
+                                    .filter((loc) => loc.visibility)
+                                    .map((loc) => (
                                     <NavLink
                                         to={`/clusters/${loc.id}`}
                                         className={styles.disease_info_left_section_text}

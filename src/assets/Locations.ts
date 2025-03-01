@@ -1,6 +1,7 @@
 const locations = [
     {
         id: 8,
+        visibility: false,
         name: "Póvoa de Varzim and Vila do Conde, Portugal",
         table_data: {
             disease: "Hereditary transthyretin amyloidosis",
@@ -70,6 +71,7 @@ const locations = [
     },
     {
         id: 14,
+        visibility: true,
         name: "Oaxaca, Mexico",
         table_data: {
             disease: "Familial hypercholesterolemia",

@@ -44,7 +44,6 @@ export default function DiseaseCard({id}: Readonly<{ id: number }>) {
                     </div>
                 </div>
             </div>
-
         </div>
     );
 }
