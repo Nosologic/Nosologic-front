@@ -1,0 +1,18 @@
+@use '../variables';
+
+.home_page_ctr {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.page_subtitle {
+  @include variables.title2;
+}
+
+.qa_cards_ctr {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: row;
+}
+

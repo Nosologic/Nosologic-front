@@ -1,0 +1,12 @@
+@use '../../variables';
+
+.home_page_card {
+  width: fit-content;
+  aspect-ratio: 1/1;
+}
+
+.card_name {
+  @include variables.h5;
+  font-weight: 600;
+  color: variables.$dark_blue;
+}
