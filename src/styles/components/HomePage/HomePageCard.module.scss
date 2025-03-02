@@ -1,8 +1,9 @@
 @use '../../variables';
 
 .home_page_card {
-  width: fit-content;
-  aspect-ratio: 1/1;
+  width: 300px;
+  height: 150px;
+  border: 1px solid variables.$border_light;
 }
 
 .card_name {
