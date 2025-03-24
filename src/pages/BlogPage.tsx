@@ -9,11 +9,15 @@ export default function BlogPage() {
             <span className={styles.page_title}>Blog</span>
             <CustomSearch className={styles.search_container}/>
             <div className={styles.blog_entries}>
-                {blogs
-                    .filter((blog) => blog.visibility)
-                    .map((blog) => (
-                    <BlogEntryCard key={blog.id} blog={blog}/>
-                ))}
+                {blogs.filter((blog) => blog.visibility).length > 0 ? (
+                    blogs
+                        .filter((blog) => blog.visibility)
+                        .map((blog) => (
+                            <BlogEntryCard key={blog.id} blog={blog} />
+                        ))
+                ) : (
+                    <span className={styles.no_blogs_message}>No blogs available at the moment.</span>
+                )}
             </div>
         </main>
     )
