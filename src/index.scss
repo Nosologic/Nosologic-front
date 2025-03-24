@@ -47,6 +47,12 @@ main {
   margin-bottom: 96px;
 }
 
+@media (max-width: 820px) {
+  main {
+    width: 50%;
+  }
+}
+
 #root {
   width: 100%;
   min-height: 100vh;
