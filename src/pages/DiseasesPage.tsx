@@ -7,7 +7,7 @@ export default function DiseasesPage() {
     return (
         <main className={styles.diseases_page_ctr}>
             <span className={styles.page_title}>
-                Diseases:
+                Diseases
             </span>
             <CustomSearch className={styles.search_container}/>
             {/* Loops through all the records from Diseases.ts and creates a DiseaseCard for each */}
