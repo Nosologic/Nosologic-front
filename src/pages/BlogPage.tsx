@@ -9,7 +9,9 @@ export default function BlogPage() {
             <span className={styles.page_title}>Blog</span>
             <CustomSearch className={styles.search_container}/>
             <div className={styles.blog_entries}>
-                {blogs.map((blog) => (
+                {blogs
+                    .filter((blog) => blog.visibility)
+                    .map((blog) => (
                     <BlogEntryCard key={blog.id} blog={blog}/>
                 ))}
             </div>
