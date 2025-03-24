@@ -1,6 +1,5 @@
 @use "../variables";
 
-
 // .header_ctr: The container for the header
 .header_ctr {
   width: 100%;
@@ -103,6 +102,7 @@
   gap: 1.5em;
   height: 100%;
   align-items: center;
+
   // TODO: implement and remove it
   visibility: hidden;
 }
@@ -113,4 +113,47 @@
   gap: 1.5em;
   height: 100%;
   align-items: center;
+}
+
+/* Responsive menu styles */
+
+// Hide full navigation and add menu button on smaller screens
+@media only screen and (max-width: 768px) {
+  .header_nav_menu {
+    display: none;
+    position: absolute;
+    top: 72px;
+    right: 16px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+    z-index: 10;
+
+    ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  .show_menu {
+    display: block;
+  }
+
+  // Menu button for small screens
+  .menu_button {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
+
+// By default, hide the menu button on larger screens
+@media only screen and (min-width: 769px) {
+  .menu_button {
+    display: none;
+  }
 }
