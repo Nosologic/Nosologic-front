@@ -3,11 +3,12 @@ import { AiOutlineSearch } from "react-icons/ai";
 
 type CustomSearchProps = {
     className?: string; // Accept custom classNames
+    id?: string;
 };
 
-export default function CustomSearch({ className }: Readonly<CustomSearchProps>) {
+export default function CustomSearch({ className, id }: Readonly<CustomSearchProps>) {
     return (
-        <div className={`${styles.search_container} ${className}`}>
+        <div className={`${styles.search_container} ${className ?? ""}`} id={id ?? ""}>
             <AiOutlineSearch className={styles.search_icon} />
             <input
                 type="text"

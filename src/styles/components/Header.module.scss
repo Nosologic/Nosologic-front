@@ -96,7 +96,7 @@
   padding: 0 8px;
 }
 
-.header_content_right {
+.header_content_search_login {
   display: flex;
   flex-direction: row;
   gap: 1.5em;
@@ -107,7 +107,7 @@
   visibility: hidden;
 }
 
-.header_content_left {
+.header_content_nav {
   display: flex;
   flex-direction: row;
   gap: 1.5em;
@@ -115,45 +115,60 @@
   align-items: center;
 }
 
+.menu_btn {
+  /* Remove default button styling */
+  border: none; /* Remove borders */
+  cursor: pointer; /* Add pointer cursor for better user experience */
+  font-size: 24px; /* Adjust size for visibility */
+  display: flex; /* Center content if there are other elements inside */
+  align-items: center;
+  justify-content: center;
+  width: 48px; /* Set fixed width for consistent appearance */
+  height: 48px; /* Set fixed height for consistent appearance */
+  border-radius: 50%; /* Make the button circular */
+  transition: background-color 0.2s ease, transform 0.2s ease; /* Smooth hover and click effects */
+
+  color: #333; /* Default color */
+  /* Transparent background by default */
+  background: transparent none;
+
+
+}
+
+
+
+
+
+
+
 /* Responsive menu styles */
 
-// Hide full navigation and add menu button on smaller screens
-@media only screen and (max-width: 768px) {
+// small screen
+@media (max-width: 768px) {
   .header_nav_menu {
     display: none;
-    position: absolute;
-    top: 72px;
-    right: 16px;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-    padding: 10px;
+  }
+
+  .header_content_nav {
     width: 100%;
-    z-index: 10;
-
-    ul {
-      flex-direction: column;
-      gap: 10px;
-    }
+    justify-content: space-between;
   }
 
-  .show_menu {
-    display: block;
-  }
-
-  // Menu button for small screens
-  .menu_button {
-    display: block;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-  }
-}
-
-// By default, hide the menu button on larger screens
-@media only screen and (min-width: 769px) {
-  .menu_button {
+  .header_content_search_login {
     display: none;
   }
 }
+
+// large screen
+@media (min-width: 768px) {
+  .menu_btn {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  #header_search {
+    display: none !important;
+  }
+}
+

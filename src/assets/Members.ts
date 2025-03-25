@@ -23,6 +23,12 @@ const members = [
         name: "Merlijn Olnon",
         linkedin: "https://www.linkedin.com/in/merlijn-olnon/",
     },
+    {
+        id: 5,
+        role_id: 3,
+        name: "Maksim Savochkin",
+        linkedin: "https://www.linkedin.com/in/maksim-savochkin-084bb4306/",
+    }
 ]
 
 export default members;
