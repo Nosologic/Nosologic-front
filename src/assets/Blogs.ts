@@ -9,7 +9,7 @@ const blogs = [
             "mollit anim id est laborum.",
         author: "Valentijn van Dijk",
         date: "01-01-2020",
-        
+        visibility: false,
     },
     {
         id: 2,
@@ -17,7 +17,7 @@ const blogs = [
         content: "Lorem ipsum dolor sit amet.",
         author: "Maksim Savochkin",
         date: "01-01-2025",
-
+        visibility: false,
     }
 ]
 
