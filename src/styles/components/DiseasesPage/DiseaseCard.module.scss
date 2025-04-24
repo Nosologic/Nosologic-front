@@ -20,13 +20,14 @@
     flex-direction: row;
     gap: 72px;
     align-items: center;
+    justify-content: space-between;
+    margin-right: 10%;
   }
 
   .dc_info_ctr {
     margin-top: 4px;
     display: flex;
     flex-direction: column;
-
   }
 }
 

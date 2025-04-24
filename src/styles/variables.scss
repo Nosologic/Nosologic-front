@@ -67,6 +67,7 @@ $intense_aqua: #a0e1e5;
   font-size: 12px;
 }
 
+
 // button mixins
 
 @mixin label {
@@ -90,5 +91,10 @@ $intense_aqua: #a0e1e5;
 
 @mixin title2 {
   @include h5;
+  font-weight: 600;
+}
+
+@mixin title3 {
+  @include h6;
   font-weight: 600;
 }
