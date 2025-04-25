@@ -9,7 +9,7 @@ const blogs = [
             "mollit anim id est laborum.",
         author: "Valentijn van Dijk",
         date: "01-01-2020",
-        visibility: true,
+        visibility: false,
     },
     {
         id: 2,
