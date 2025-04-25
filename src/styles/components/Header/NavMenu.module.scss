@@ -9,15 +9,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  @media (max-width: 768px) {
-    flex-direction: column;
+  @media (min-width: 769px) {
+    flex-direction: row;
+    height: 100%;
+    font-size: 18px;
   }
-  flex-direction: row;
+  @media (max-width: 768px) {
+    font-size: 22px;
+    flex-direction: column;
+    margin-top: 32px;
+  }
+
   list-style-type: none;
   padding: 0;
   margin: 0;
   gap: 1.5em;
-  height: 100%;
 
   // li: Styles for each navigation list item
   li {

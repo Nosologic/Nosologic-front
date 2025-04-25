@@ -3,6 +3,10 @@ import styles from "../../styles/components/DiseasesPage/DiseaseCard.module.scss
 import diseases from "../../assets/Diseases.ts";
 import FavButton from "../UIKit/FavButton.tsx";
 import {useEffect, useState} from "react";
+import {useIsMobile} from "../../hooks/useIsMobile.tsx";
+import {FaMapLocation} from "react-icons/fa6";
+import {MdOutlineDriveFileRenameOutline} from "react-icons/md";
+import {SiMicrogenetics} from "react-icons/si";
 
 
 export default function DiseaseCard({id}: Readonly<{ id: number }>) {
@@ -11,18 +15,43 @@ export default function DiseaseCard({id}: Readonly<{ id: number }>) {
     const visibleLocations = locations
         .filter((loc) => loc.visibility);
 
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    const isMobile = useIsMobile();
+    const [smallMobile, setSmallMobile] = useState(window.innerWidth <= 500);
 
     // Update `isMobile` when the viewport size changes
     useEffect(() => {
         const handleResize = () => {
-            setIsMobile(window.innerWidth <= 768);
+            setSmallMobile(window.innerWidth <= 500);
         };
 
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
+    const defineContent = (purpose: string) => {
+        if (purpose === "location") {
+            if (smallMobile) {
+                return <FaMapLocation className={styles.dc_description_icon}/>;
+            } else {
+                return ( visibleLocations.length > 1 ? "Locations:" : "Location:" );
+            }
+
+        } else if (purpose === "alt_name") {
+            if (smallMobile) {
+                return <MdOutlineDriveFileRenameOutline className={styles.dc_description_icon}/>;
+            } else {
+                return ( alt_names.length > 1 ? "Alternative names:" : "Alternative name:" );
+            }
+        } else if (purpose === "locus") {
+            if (smallMobile) {
+                return <SiMicrogenetics className={styles.dc_description_icon}/>;
+            } else {
+                return ( locus.length > 1 ? "Loci:" : "Locus:" );
+            }
+        } else {
+            throw new Error("Unknown purpose");
+        }
+    }
 
     return (
         <div className={styles.disease_card}>
@@ -36,7 +65,7 @@ export default function DiseaseCard({id}: Readonly<{ id: number }>) {
             <div className={styles.disease_card_info_ctr}>
                 {/* dc stands for disease card */}
                 <div className={styles.dc_info_ctr}>
-                    <span className={styles.dc_info_title}>{ visibleLocations.length > 1 ? "Locations:" : "Location:" }</span>
+                    <span className={styles.dc_info_title}>{ defineContent("location") }</span>
                     <div className={styles.dc_info_overflow}>
                         {isMobile ?
                             <span className={styles.tag}>{visibleLocations.length}</span> :
@@ -47,7 +76,7 @@ export default function DiseaseCard({id}: Readonly<{ id: number }>) {
                 </div>
 
                 <div className={styles.dc_info_ctr}>
-                    <span className={styles.dc_info_title}>Alternative name{ alt_names.length > 1 ? "s" : "" }:</span>
+                    <span className={styles.dc_info_title}>{ defineContent("alt_name") }</span>
                     <div className={styles.dc_info_overflow}>
                         {isMobile ?
                             <span className={styles.tag}>{alt_names.length}</span> :
@@ -57,11 +86,13 @@ export default function DiseaseCard({id}: Readonly<{ id: number }>) {
                     </div>
                 </div>
                 <div className={styles.dc_info_ctr}>
-                    <span className={styles.dc_info_title}>{ locus.length > 1 ? "Loci:" : "Locus:" }</span>
+                    <span className={styles.dc_info_title}>{ defineContent("locus") }</span>
                     <div className={styles.dc_info_overflow}>
-                        {locus.map(((locus) => (
-                            <span key={locus} className={styles.tag}>{locus}</span>
-                        )))}
+                        {isMobile ?
+                            <span className={styles.tag}>{locus.length}</span> :
+                            locus.map(((locus) => (
+                                <span key={locus} className={styles.tag}>{locus}</span>
+                            )))}
                     </div>
                 </div>
             </div>

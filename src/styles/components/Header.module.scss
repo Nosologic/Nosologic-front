@@ -61,7 +61,7 @@
   align-items: center;
 
   // TODO: implement and remove it
-  //visibility: hidden;
+  visibility: hidden;
 }
 
 .header_content_nav {
@@ -73,28 +73,23 @@
 }
 
 .menu_btn {
-  /* Remove default button styling */
-  border: none; /* Remove borders */
-  cursor: pointer; /* Add pointer cursor for better user experience */
-  font-size: 24px; /* Adjust size for visibility */
-  display: flex; /* Center content if there are other elements inside */
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px; /* Set fixed width for consistent appearance */
-  height: 48px; /* Set fixed height for consistent appearance */
-  border-radius: 50%; /* Make the button circular */
-  transition: background-color 0.2s ease, transform 0.2s ease; /* Smooth hover and click effects */
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 
-  color: #333; /* Default color */
-  /* Transparent background by default */
+  color: #333;
+
   background: transparent none;
 
 
 }
-
-
-
-
 
 
 

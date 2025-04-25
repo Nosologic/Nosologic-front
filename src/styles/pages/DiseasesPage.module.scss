@@ -5,10 +5,13 @@
 }
 
 .page_title {
+  @media (max-width: 520px) {
+    @include variables.title2;
+  }
   @include variables.title1;
   margin-bottom: 16px;
 }
 
 .search_container {
-  margin: 16px 0;
+  margin-bottom: 16px;
 }

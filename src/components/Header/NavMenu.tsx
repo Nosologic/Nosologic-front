@@ -2,7 +2,7 @@ import styles from "../../styles/components/header/NavMenu.module.scss";
 import {NavLink} from "react-router-dom";
 
 interface NavMenuProps {
-    close: () => void;
+    close?: () => void;
 }
 
 export default function NavMenu({close} : Readonly<NavMenuProps>) {

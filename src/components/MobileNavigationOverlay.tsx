@@ -6,6 +6,7 @@ import {useIsMobile} from "../hooks/useIsMobile.tsx";
 interface MobileNavigationOverlayProps {
     isOpen: boolean,
     onClose: () => void,
+
 }
 
 export default function MobileNavigationOverlay({ isOpen, onClose } : Readonly<MobileNavigationOverlayProps>) {

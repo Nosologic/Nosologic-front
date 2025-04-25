@@ -86,7 +86,7 @@ These are some of the empirical questions raised by the interesting proposal of 
         ],
         table_data: {
             alt_names: [
-                'Familial defective apolipoprotein B-100'
+                'Familial defective apolipoprotein B-100',
             ],
             locus: ['LDLR'],
             mondo: ['https://monarchinitiative.org/MONDO:0005439', 'monarchinitiative.org/MONDO:0005439'],

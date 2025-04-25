@@ -15,54 +15,15 @@
 }
 
 .close_btn {
-  width: 32px;
-  height: 32px;
+  width: 48px;
+  height: 48px;
   background: none;
   border: none;
   align-self: flex-end;
   cursor: pointer;
+  color: #333;
 }
 
-.header_nav_menu {
-  height: 100%;
-}
 
-// .navigation_buttons: Styles for the navigation buttons
-.navigation_buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  gap: 1.5em;
-  height: 100%;
 
-  // li: Styles for each navigation list item
-  li {
-    // a: Links inside each navigation item
-    a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      transition: color 0.3s ease;
-      padding: 0 4px;
-      // &:hover: Hover effect for navigation links
-      &:hover {
-        color: variables.$text_hover;
-      }
-    }
 
-    // .nav_link: Default styles for navigation links
-    .nav_link {
-      color: variables.$text_not_active;
-    }
-
-    // .active: Styles for the active navigation link
-    .active {
-      color: variables.$text;
-    }
-  }
-}

@@ -1,4 +1,4 @@
-import { useState} from "react";
+import {useState} from "react";
 import styles from "../styles/components/Header.module.scss";
 import logo from "../assets/logo no bg.png";
 import { NavLink } from "react-router-dom";
@@ -13,6 +13,7 @@ export default function Header() {
     const isMobile = useIsMobile();
 
     const toggleMenu = () => {
+
         setIsMenuOpen(!isMenuOpen);
     };
 
@@ -20,7 +21,7 @@ export default function Header() {
         if (!isMobile) {
             return <NavMenu />;
         } else if (isMenuOpen) {
-            return <MobileNavigationOverlay isOpen={isMenuOpen} onClose={toggleMenu} />;
+            return <MobileNavigationOverlay isOpen={isMenuOpen} onClose={toggleMenu}/>;
         }
     }
 
@@ -36,7 +37,6 @@ export default function Header() {
                     <button
                         className={styles.menu_btn}
                         onClick={toggleMenu}
-                        aria-label="Toggle navigation menu"
                     >
                         ☰
                     </button>
