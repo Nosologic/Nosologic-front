@@ -1,27 +1,4 @@
-@use "../variables";
-
-.mobile_nav_overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: variables.$background;
-  z-index: 999;
-  animation: slideDown 0.1s ease-out forwards;
-  display: flex;
-  flex-direction: column;
-
-}
-
-.close_btn {
-  width: 32px;
-  height: 32px;
-  background: none;
-  border: none;
-  align-self: flex-end;
-  cursor: pointer;
-}
+@use "../../variables";
 
 .header_nav_menu {
   height: 100%;
@@ -32,7 +9,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+  flex-direction: row;
   list-style-type: none;
   padding: 0;
   margin: 0;

@@ -26,49 +26,6 @@
   width: 80%;
 }
 
-.header_nav_menu {
-  height: 100%;
-}
-
-// .navigation_buttons: Styles for the navigation buttons
-.navigation_buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  gap: 1.5em;
-  height: 100%;
-
-  // li: Styles for each navigation list item
-  li {
-    // a: Links inside each navigation item
-    a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      transition: color 0.3s ease;
-      padding: 0 4px;
-      // &:hover: Hover effect for navigation links
-      &:hover {
-        color: variables.$text_hover;
-      }
-    }
-
-    // .nav_link: Default styles for navigation links
-    .nav_link {
-      color: variables.$text_not_active;
-    }
-
-    // .active: Styles for the active navigation link
-    .active {
-      color: variables.$text;
-    }
-  }
-}
 
 // .navigation_btn: Additional styles for navigation buttons
 .navigation_btn {
@@ -104,7 +61,7 @@
   align-items: center;
 
   // TODO: implement and remove it
-  visibility: hidden;
+  //visibility: hidden;
 }
 
 .header_content_nav {
@@ -164,7 +121,7 @@
 }
 
 // large screen
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .menu_btn {
     display: none;
   }

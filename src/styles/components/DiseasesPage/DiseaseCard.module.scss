@@ -7,27 +7,34 @@
   border: 1px solid variables.$border_light;
   padding: 16px;
 
+
   .dc_upper_ctr {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+
   }
 
 
   .disease_card_info_ctr {
     display: flex;
     flex-direction: row;
-    gap: 72px;
     align-items: center;
     justify-content: space-between;
-    margin-right: 10%;
+    margin-right: 8%;
+
   }
 
   .dc_info_ctr {
     margin-top: 4px;
     display: flex;
     flex-direction: column;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: row;
+      align-items: center;
+      gap: 4px;
+    }
   }
 }
 
@@ -53,6 +60,7 @@
   color: variables.$text_light;
   padding-bottom: 4px;
   gap: 4px;
+
 
 
   &::-webkit-scrollbar {

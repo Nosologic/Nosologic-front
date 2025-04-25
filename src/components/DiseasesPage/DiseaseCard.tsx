@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import styles from "../../styles/components/DiseasesPage/DiseaseCard.module.scss"
 import diseases from "../../assets/Diseases.ts";
 import FavButton from "../UIKit/FavButton.tsx";
+import {useEffect, useState} from "react";
 
 
 export default function DiseaseCard({id}: Readonly<{ id: number }>) {
@@ -9,6 +10,19 @@ export default function DiseaseCard({id}: Readonly<{ id: number }>) {
     const { alt_names, locus } = table_data;
     const visibleLocations = locations
         .filter((loc) => loc.visibility);
+
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+    // Update `isMobile` when the viewport size changes
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
 
     return (
         <div className={styles.disease_card}>
@@ -24,7 +38,9 @@ export default function DiseaseCard({id}: Readonly<{ id: number }>) {
                 <div className={styles.dc_info_ctr}>
                     <span className={styles.dc_info_title}>{ visibleLocations.length > 1 ? "Locations:" : "Location:" }</span>
                     <div className={styles.dc_info_overflow}>
-                        {visibleLocations.map(((loc) => (
+                        {isMobile ?
+                            <span className={styles.tag}>{visibleLocations.length}</span> :
+                            visibleLocations.map(((loc) => (
                             <span key={loc.id} className={styles.tag}>{loc.location}</span>
                         )))}
                     </div>
@@ -33,9 +49,11 @@ export default function DiseaseCard({id}: Readonly<{ id: number }>) {
                 <div className={styles.dc_info_ctr}>
                     <span className={styles.dc_info_title}>Alternative name{ alt_names.length > 1 ? "s" : "" }:</span>
                     <div className={styles.dc_info_overflow}>
-                        {alt_names.map(((name) => (
-                            <span key={name} className={styles.tag}>{name}</span>
-                        )))}
+                        {isMobile ?
+                            <span className={styles.tag}>{alt_names.length}</span> :
+                            alt_names.map(((name) => (
+                                <span key={name} className={styles.tag}>{name}</span>
+                            )))}
                     </div>
                 </div>
                 <div className={styles.dc_info_ctr}>

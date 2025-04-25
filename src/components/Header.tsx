@@ -1,19 +1,28 @@
-import { useState } from "react";
+import { useState} from "react";
 import styles from "../styles/components/Header.module.scss";
 import logo from "../assets/logo no bg.png";
 import { NavLink } from "react-router-dom";
 import CustomSearch from "./UIKit/CustomSearch.tsx";
 import MobileNavigationOverlay from "./MobileNavigationOverlay.tsx";
+import NavMenu from "./Header/NavMenu.tsx";
+import {useIsMobile} from "../hooks/useIsMobile.tsx";
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const isMobile = useIsMobile();
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
-    const setActive = ({ isActive }: { isActive: boolean }) =>
-        isActive ? styles.active : styles.nav_link;
+    const displayHeaderMenu = () => {
+        if (!isMobile) {
+            return <NavMenu />;
+        } else if (isMenuOpen) {
+            return <MobileNavigationOverlay isOpen={isMenuOpen} onClose={toggleMenu} />;
+        }
+    }
 
     return (
         <header className={styles.header_ctr}>
@@ -32,34 +41,7 @@ export default function Header() {
                         ☰
                     </button>
 
-                    <nav className={styles.header_nav_menu}>
-                        <ul className={styles.navigation_buttons}>
-                            <li className={styles.navigation_btn}>
-                                <NavLink to="/home" className={setActive}>
-                                    Home
-                                </NavLink>
-                            </li>
-                            <li className={styles.navigation_btn}>
-                                <NavLink to="/diseases" className={setActive}>
-                                    Diseases
-                                </NavLink>
-                            </li>
-                            <li className={styles.navigation_btn}>
-                                <NavLink to="/about" className={setActive}>
-                                    About
-                                </NavLink>
-                            </li>
-                            <li className={styles.navigation_btn}>
-                                <NavLink to="/blog" className={setActive}>
-                                    Blog
-                                </NavLink>
-                            </li>
-                        </ul>
-                    </nav>
-
-                    {
-                        isMenuOpen ? <MobileNavigationOverlay /> : null
-                    }
+                    { displayHeaderMenu() }
                 </div>
 
                 <div className={styles.header_content_search_login} >
