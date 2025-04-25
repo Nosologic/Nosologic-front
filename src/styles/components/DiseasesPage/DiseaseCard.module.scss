@@ -36,6 +36,11 @@
       align-items: center;
       gap: 4px;
     }
+    @media screen and (max-width: 390px) {
+      flex-direction: row;
+      align-items: center;
+      gap: 1px;
+    }
   }
 }
 
@@ -62,6 +67,10 @@
 .dc_info_title {
   @media screen and (max-width: 638px) {
     @include variables.h7;
+    font-weight: 500;
+  }
+  @media screen and (max-width: 420px) {
+    @include variables.h8;
     font-weight: 500;
   }
   color: variables.$text;
@@ -104,6 +113,9 @@
   border-radius: 5px;
   @media screen and (min-width: 768px) {
     margin: 4px 0;
+  }
+  @media screen and (max-width: 520px) {
+    font-size: 12px;
   }
   width: fit-content;
 }

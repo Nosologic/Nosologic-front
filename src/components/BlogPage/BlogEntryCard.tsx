@@ -18,7 +18,7 @@ export default function BlogEntryCard({blog}: Readonly<IBlogEntryCardProps>) {
     const { id, title, content, author, date } = blog;
 
     return (
-        <div className={styles.disease_card}>
+        <div className={styles.blog_entry_card}>
             <div className={styles.bec_upper_ctr}>
                 <NavLink to={`/blog/${id}`} className={styles.bec_title}>
                     {title}

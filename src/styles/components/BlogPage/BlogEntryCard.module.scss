@@ -1,6 +1,6 @@
 @use '../../variables';
 
-.disease_card {
+.blog_entry_card {
   @include variables.font-family;
   width: 100%;
   border-radius: 5px;
@@ -18,7 +18,7 @@
   .blog_entry_card_info_ctr {
     display: flex;
     flex-direction: row;
-    gap: 72px;
+    gap: 10%;
     align-items: center;
   }
 
@@ -31,12 +31,19 @@
 }
 
 .bec_title {
+  @media screen and (max-width: 768px){
+    @include variables.h6;
+    font-weight: 600;
+  }
   @include variables.h5;
   font-weight: 600;
   color: variables.$dark_blue;
 }
 
 .bec_content {
+  @media screen and (max-width: 768px){
+    font-size: 12px;
+  }
   @include variables.h7;
   margin: 12px 0 12px 4px;
 }
@@ -54,6 +61,9 @@
 }
 
 .be_info {
+  @media screen and (max-width: 768px){
+    font-size: 12px;
+  }
   font-weight: bold;
   margin: 4px 0;
   width: fit-content;

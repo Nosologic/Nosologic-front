@@ -3,8 +3,14 @@
 .role_list_section {
 
   .about_role_title {
-    margin-top: 24px;
-    @include variables.title2;
+    margin-top: 16px;
+    @media screen and (max-width: 768px){
+      @include variables.h6;
+      font-weight: 600;
+      color: variables.$text;
+    }
+    @include variables.h5;
+    font-weight: 600;
     color: variables.$text;
   }
 

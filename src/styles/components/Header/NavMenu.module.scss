@@ -13,11 +13,13 @@
     flex-direction: row;
     height: 100%;
     font-size: 18px;
+    font-weight: 500;
   }
   @media (max-width: 768px) {
     font-size: 22px;
     flex-direction: column;
     margin-top: 32px;
+    font-weight: 500;
   }
 
   list-style-type: none;

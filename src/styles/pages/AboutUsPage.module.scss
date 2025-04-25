@@ -6,26 +6,20 @@
 }
 
 .page_title {
+  @media screen and (max-width: 768px){
+    @include variables.title2;
+  }
   @include variables.title1;
 }
 
 .about_page_text {
   @include variables.font-family;
+  @media screen and (max-width: 768px){
+    font-size: 16px;
+    color: variables.$text;
+    line-height: 1.5;
+  }
   font-size: 18px;
   color: variables.$text;
   line-height: 1.6;
-}
-
-.about_section {
-  margin-top: 16px;
-  .about_role_title {
-    @include variables.h5;
-    font-weight: 500;
-    color: variables.$text;
-  }
-
-}
-
-.about_member_entry {
-  display: flex;
 }

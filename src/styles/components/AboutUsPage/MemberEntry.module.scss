@@ -2,12 +2,15 @@
 
 .about_member_entry {
   display: flex;
-  width: 280px;
+  width: 100%;
   justify-content: space-between;
   margin-top: 4px;
 }
 
 .about_member_info {
+  @media screen and (max-width: 768px){
+    @include variables.h7;
+  }
   @include variables.font-family;
   font-size: 18px;
 

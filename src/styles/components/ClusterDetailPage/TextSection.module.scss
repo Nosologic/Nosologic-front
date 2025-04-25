@@ -8,9 +8,22 @@
   margin-top: 16px;
 }
 
+
+
+@media screen and (max-width: 768px){
+  .cluster_description_ctr {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+  }
+}
+
 .cluster_info_text {
   @include variables.h7;
   color: variables.$text;
   line-height: 1.6;
   width: 100%;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
