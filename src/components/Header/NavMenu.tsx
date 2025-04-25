@@ -1,4 +1,4 @@
-import styles from "../../styles/components/header/NavMenu.module.scss";
+import styles from "../../styles/components/Header/NavMenu.module.scss";
 import {NavLink} from "react-router-dom";
 
 interface NavMenuProps {
