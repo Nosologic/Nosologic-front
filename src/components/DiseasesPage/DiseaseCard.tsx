@@ -53,6 +53,18 @@ export default function DiseaseCard({id}: Readonly<{ id: number }>) {
         }
     }
 
+    const getTooltip = (purpose: string) => {
+        if (purpose === "location") {
+            return "Number of geographic regions where a cluster of this disease occurs.";
+        } else if (purpose === "alt_name") {
+            return "Number of other names by which this disease is known";
+        } else if (purpose === "locus") {
+            return "Genetic regions associated with this disease";
+        } else {
+            return "";
+        }
+    }
+
     return (
         <div className={styles.disease_card}>
             <div className={styles.dc_upper_ctr}>
@@ -65,7 +77,7 @@ export default function DiseaseCard({id}: Readonly<{ id: number }>) {
             <div className={styles.disease_card_info_ctr}>
                 {/* dc stands for disease card */}
                 <div className={styles.dc_info_ctr}>
-                    <span className={styles.dc_info_title}>{ defineContent("location") }</span>
+                    <span className={styles.dc_info_title} title={getTooltip("location")}>{ defineContent("location") }</span>
                     <div className={styles.dc_info_overflow}>
                         {isMobile ?
                             <span className={styles.tag}>{visibleLocations.length}</span> :
@@ -76,7 +88,7 @@ export default function DiseaseCard({id}: Readonly<{ id: number }>) {
                 </div>
 
                 <div className={styles.dc_info_ctr}>
-                    <span className={styles.dc_info_title}>{ defineContent("alt_name") }</span>
+                    <span className={styles.dc_info_title} title={getTooltip("alt_name")}>{ defineContent("alt_name") }</span>
                     <div className={styles.dc_info_overflow}>
                         {isMobile ?
                             <span className={styles.tag}>{alt_names.length}</span> :
@@ -86,7 +98,7 @@ export default function DiseaseCard({id}: Readonly<{ id: number }>) {
                     </div>
                 </div>
                 <div className={styles.dc_info_ctr}>
-                    <span className={styles.dc_info_title}>{ defineContent("locus") }</span>
+                    <span className={styles.dc_info_title} title={getTooltip("locus")}>{ defineContent("locus") }</span>
                     <div className={styles.dc_info_overflow}>
                         {isMobile ?
                             <span className={styles.tag}>{locus.length}</span> :
