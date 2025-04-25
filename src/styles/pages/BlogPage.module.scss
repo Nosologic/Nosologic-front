@@ -1,6 +1,9 @@
 @use '../variables';
 
 .page_title {
+  @media (max-width: 768px) {
+    @include variables.title2;
+  }
   @include variables.title1;
 }
 

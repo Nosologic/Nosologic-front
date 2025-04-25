@@ -64,8 +64,19 @@ $intense_aqua: #a0e1e5;
 
 @mixin h8 {
   @include font-family;
+  font-size: 14px;
+}
+
+@mixin h9 {
+  @include font-family;
   font-size: 12px;
 }
+
+@mixin h10 {
+  @include font-family;
+  font-size: 10px;
+}
+
 
 // button mixins
 
@@ -90,5 +101,10 @@ $intense_aqua: #a0e1e5;
 
 @mixin title2 {
   @include h5;
+  font-weight: 600;
+}
+
+@mixin title3 {
+  @include h6;
   font-weight: 600;
 }

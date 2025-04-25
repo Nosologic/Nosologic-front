@@ -1,0 +1,30 @@
+@use "../variables";
+
+.mobile_nav_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: variables.$background;
+  z-index: 999;
+  animation: slideDown 0.1s ease-out forwards;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.close_btn {
+  width: 48px;
+  height: 48px;
+  background: none;
+  border: none;
+  align-self: flex-end;
+  cursor: pointer;
+  color: #333;
+  margin: 12px 12px 0 0;
+}
+
+
+
+

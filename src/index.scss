@@ -45,13 +45,15 @@ main {
   flex-direction: column;
   justify-self: center;
   margin-bottom: 96px;
-}
-
-@media (max-width: 820px) {
-  main {
+  @media screen and (max-width: 820px) {
     width: 50%;
   }
+  @media screen and (max-width: 1100px) {
+    width: 69%;
+  }
 }
+
+
 
 #root {
   width: 100%;

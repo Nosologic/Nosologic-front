@@ -1,62 +1,54 @@
-import styles from '../styles/components/Header.module.scss';
-import logo from '../assets/logo no bg.png'
-import {NavLink} from "react-router-dom";
+import {useState} from "react";
+import styles from "../styles/components/Header.module.scss";
+import logo from "../assets/logo no bg.png";
+import { NavLink } from "react-router-dom";
 import CustomSearch from "./UIKit/CustomSearch.tsx";
-
+import MobileNavigationOverlay from "./MobileNavigationOverlay.tsx";
+import NavMenu from "./Header/NavMenu.tsx";
+import {useIsMobile} from "../hooks/useIsMobile.tsx";
+import {AiOutlineMenu} from "react-icons/ai";
 
 export default function Header() {
-    const setActive = ({ isActive }: { isActive: boolean }) =>
-        isActive ? styles.active : styles.nav_link;
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const isMobile = useIsMobile();
+
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
+    const displayHeaderMenu = () => {
+        if (!isMobile) {
+            return <NavMenu />;
+        } else if (isMenuOpen) {
+            return <MobileNavigationOverlay isOpen={isMenuOpen} onClose={toggleMenu}/>;
+        }
+    }
 
     return (
         <header className={styles.header_ctr}>
-
-
             <div className={styles.header_content}>
-                <div className={styles.header_content_left}>
+                <div className={styles.header_content_nav}>
                     <NavLink to="/">
-                        <img src={logo} alt="Nosologic" className={styles.logo}/>
+                        <img src={logo} alt="Nosologic" className={styles.logo} />
                     </NavLink>
-                    <nav className={styles.header_nav_menu}>
-                        <ul className={styles.navigation_buttons}>
-                            <li className={styles.navigation_btn}>
-                                <NavLink to="/home" className={setActive}>
-                                    Home
-                                </NavLink>
-                            </li>
-                            <li className={styles.navigation_btn}>
-                                <NavLink to="/diseases" className={setActive}>
-                                    Diseases
-                                </NavLink>
-                            </li>
-                            <li className={styles.navigation_btn}>
-                                <NavLink to="/about" className={setActive}>
-                                    About
-                                </NavLink>
-                            </li>
-                            <li className={styles.navigation_btn}>
-                                <NavLink to="/blog" className={setActive}>
-                                    Blog
-                                </NavLink>
-                            </li>
-                        </ul>
-                    </nav>
+
+                    {/* Mobile Menu Button */}
+                    <AiOutlineMenu
+                        className={styles.menu_btn}
+                        onClick={toggleMenu}
+                    />
+
+                    { displayHeaderMenu() }
                 </div>
 
+                <div className={styles.header_content_search_login} >
+                    <CustomSearch id={styles.header_search} />
 
-                <div className={styles.header_content_right}>
-                    <CustomSearch/>
-
-                    <button className={styles.sign_in_btn}>
-                        Sign in
-                    </button>
-                    <button className={styles.sign_up_btn}>
-                        Sign up
-                    </button>
+                    <button className={styles.sign_in_btn}>Sign in</button>
+                    <button className={styles.sign_up_btn}>Sign up</button>
                 </div>
-
-
             </div>
         </header>
-    )
+    );
 }

@@ -2,7 +2,7 @@
 
 
 .mission_page_ctr {
-  margin: 0 auto;
+  margin-top: 0;
 }
 
 .title_ctr {
@@ -11,32 +11,21 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  .nosologic_title {
-    @include variables.h1;
-    @include variables.font-family-official;
-    font-weight: 700;
-    color: variables.$text;
-  }
-  .motto {
-    @include variables.h7;
-    color: variables.$text_light;
-  }
+
+
 }
 
 .mission_text_ctr {
   .mission_label {
-    @include variables.title1;
-    @include variables.font-family-official;
+
     margin: 2% auto;
   }
 
   .page_text {
     @include variables.font-family;
-    font-size: 18px;
     white-space: pre-wrap;
     word-wrap: break-word;
     color: variables.$text_light;
-    line-height: 1.6;
   }
 
   .mission_ref {
@@ -47,6 +36,64 @@
     color: variables.$dark_blue;
     font-weight: 500;
     margin-bottom: 64px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .nosologic_title {
+    @include variables.font-family-official;
+    font-size: 36px;
+  }
+  .motto {
+    display: none;
+  }
+  .mission_label {
+    @include variables.title3;
+    @include variables.font-family-official;
+  }
+  .page_text {
+    @include variables.h8;
+    line-height: 1.4;
+  }
+}
+
+@media screen and (min-width: 520px) and (max-width: 768px) {
+  .nosologic_title {
+    @include variables.h2;
+    @include variables.font-family-official;
+  }
+  .motto {
+    @include variables.h9;
+    color: variables.$text_light;
+  }
+  .mission_label {
+    @include variables.title2;
+    @include variables.font-family-official;
+  }
+  .page_text {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nosologic_title {
+    @include variables.h1;
+    @include variables.font-family-official;
+    font-weight: 700;
+    color: variables.$text;
+  }
+  .motto {
+    @include variables.h7;
+    color: variables.$text_light;
+  }
+  .mission_label {
+    @include variables.title1;
+    @include variables.font-family-official;
+  }
+  .page_text {
+    font-size: 18px;
+    line-height: 1.6;
   }
 }
 

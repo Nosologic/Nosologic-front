@@ -1,6 +1,9 @@
 @use '../../variables';
 
 .disease_info_table {
+  @media screen and (max-width: 768px){
+    margin-left: 0;
+  }
   margin-left: 16px;
   border: 1px solid variables.$border_dark;
   border-radius: 0 0 4px 4px;

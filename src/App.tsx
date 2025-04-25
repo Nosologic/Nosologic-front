@@ -8,7 +8,6 @@ import Layout from "./components/Layout.tsx";
 import DiseaseDetailPage from "./pages/DiseaseDetailPage.tsx";
 import ClusterDetailPage from "./pages/ClusterDetailPage.tsx";
 
-
 function App() {
 
     return (
