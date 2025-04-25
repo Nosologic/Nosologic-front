@@ -64,7 +64,17 @@ $intense_aqua: #a0e1e5;
 
 @mixin h8 {
   @include font-family;
+  font-size: 14px;
+}
+
+@mixin h9 {
+  @include font-family;
   font-size: 12px;
+}
+
+@mixin h10 {
+  @include font-family;
+  font-size: 10px;
 }
 
 

@@ -52,7 +52,7 @@
     @include variables.font-family-official;
   }
   .page_text {
-    font-size: 14px;
+    @include variables.h8;
     line-height: 1.4;
   }
 }
@@ -63,7 +63,7 @@
     @include variables.font-family-official;
   }
   .motto {
-    @include variables.h8;
+    @include variables.h9;
     color: variables.$text_light;
   }
   .mission_label {

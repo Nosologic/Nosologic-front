@@ -1,6 +1,9 @@
 @use "../variables";
 
 .page_title {
+  @media screen and (max-width: 768px){
+    @include variables.title2;
+  }
   @include variables.title1;
   margin-bottom: 16px;
 }
@@ -18,11 +21,15 @@
 }
 
 .disease_info_left_section_title {
+
   @include variables.title2;
   margin: 16px 0;
 }
 
 .location_toggle_btn {
+  @media screen and (max-width: 768px){
+    @include variables.title3;
+  }
   @include variables.title2;
   background: none;
   border: none;
@@ -30,6 +37,7 @@
   width: fit-content;
   padding: 0;
   margin: 16px 0;
+  color: #000;
   svg {
     vertical-align: middle;
     stroke-width: 0.5px;

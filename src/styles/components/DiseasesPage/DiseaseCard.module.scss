@@ -55,7 +55,7 @@
     font-weight: 600;
   }
   @media screen and (max-width: 389px) {
-    font-size: 14px;
+    @include variables.h8;
     font-weight: 600;
   }
   @include variables.h5;
@@ -70,7 +70,7 @@
     font-weight: 500;
   }
   @media screen and (max-width: 420px) {
-    @include variables.h8;
+    @include variables.h9;
     font-weight: 500;
   }
   color: variables.$text;
@@ -129,3 +129,5 @@
     height: 16px;
   }
 }
+
+
