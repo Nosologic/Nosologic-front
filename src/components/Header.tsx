@@ -6,11 +6,12 @@ import CustomSearch from "./UIKit/CustomSearch.tsx";
 import MobileNavigationOverlay from "./MobileNavigationOverlay.tsx";
 import NavMenu from "./Header/NavMenu.tsx";
 import {useIsMobile} from "../hooks/useIsMobile.tsx";
+import {AiOutlineMenu} from "react-icons/ai";
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
     const isMobile = useIsMobile();
+
 
     const toggleMenu = () => {
 
@@ -34,12 +35,10 @@ export default function Header() {
                     </NavLink>
 
                     {/* Mobile Menu Button */}
-                    <button
+                    <AiOutlineMenu
                         className={styles.menu_btn}
                         onClick={toggleMenu}
-                    >
-                        ☰
-                    </button>
+                    />
 
                     { displayHeaderMenu() }
                 </div>
