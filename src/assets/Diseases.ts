@@ -88,7 +88,7 @@ These are some of the empirical questions raised by the interesting proposal of 
             alt_names: [
                 'Familial defective apolipoprotein B-100',
             ],
-            locus: ['LDLR'],
+            locus: ['LDLR', 'ApoB', 'PCSK9'],
             mondo: ['https://monarchinitiative.org/MONDO:0005439', 'monarchinitiative.org/MONDO:0005439'],
         },
         text_data: {
