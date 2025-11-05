@@ -1,0 +1,50 @@
+{
+  "circles": [
+    {
+      "id": "infectious-diseases",
+      "label": "Infectious diseases",
+      "color": "#7db3ff",
+      "cx_rel": 30,
+      "cy_rel": 50,
+      "r_rel": 28
+    },
+    {
+      "id": "hereditary-diseases",
+      "label": "Hereditary diseases",
+      "color": "#ffb677",
+      "cx_rel": 70,
+      "cy_rel": 50,
+      "r_rel": 28
+    }
+  ],
+  "nodes": [
+    {
+      "id": "malaria",
+      "label": "malaria",
+      "classIds": [
+        "infectious-diseases"
+      ],
+      "x_rel": 25,
+      "y_rel": 50,
+      "url": "/node/malaria"
+    },
+    {
+      "id": "sickle-cell-disease",
+      "label": "sickle cell disease",
+      "classIds": [
+        "hereditary-diseases"
+      ],
+      "x_rel": 75,
+      "y_rel": 50,
+      "url": "/node/sickle-cell-disease"
+    }
+  ],
+  "edges": [
+    {
+      "id": "malaria__to__sickle-cell-disease",
+      "source": "malaria",
+      "target": "sickle-cell-disease",
+      "relation": "evolutionary sequela (n=3)"
+    }
+  ]
+}
