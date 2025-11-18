@@ -1,0 +1,30 @@
+[
+  {
+    "id": "infectious-diseases",
+    "label": "Infectious diseases"
+  },
+  {
+    "id": "hereditary-diseases",
+    "label": "hereditary diseases"
+  },
+  {
+    "id": "allergies",
+    "label": "allergies"
+  },
+  {
+    "id": "neoplasms",
+    "label": "neoplasms"
+  },
+  {
+    "id": "intoxications",
+    "label": "intoxications"
+  },
+  {
+    "id": "other",
+    "label": "other"
+  },
+  {
+    "id": "deficiency-diseases",
+    "label": "deficiency diseases"
+  }
+]

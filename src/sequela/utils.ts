@@ -1,24 +1,50 @@
-// Small, pure helpers.
+import type { GraphData } from "./types";
 
-export const clamp = (n: number, lo: number, hi: number) =>
-    Math.max(lo, Math.min(hi, n));
-
-export function relToPx(rel: number | undefined, size: number, fallback: number) {
-    return typeof rel === "number" ? (rel / 100) * size : fallback;
+// --- numbers <-> percentages ----------------------------------------------
+export function relToPx(rel: number, total: number): number {
+    return Math.round((rel / 100) * total);
 }
 
-export function pxToRel(px: number, size: number) {
-    return clamp((px / size) * 100, 0, 100);
+export function pxToRel(px: number, total: number): number {
+    if (total <= 0) return 0;
+    return +(px / total * 100);
 }
 
-// Tiny "version" so we only reapply session patches to the same graph shape.
-export function hashGraphShape(ids: { circles: string[]; nodes: string[]; edges: number }) {
-    return `${ids.circles.slice().sort().join(",")}|${ids.nodes.slice().sort().join(",")}|e${ids.edges}`;
+export function clamp(v: number, lo: number, hi: number): number {
+    return Math.min(hi, Math.max(lo, v));
 }
 
-export function makeNodeColorMap(circles: { id: string; color?: string }[]) {
-    const fallback = ["#6aa", "#8aa", "#a86", "#68a", "#6a8", "#a66", "#888"];
-    const map = new Map<string, string>();
-    circles.forEach((c, i) => map.set(c.id, c.color ?? fallback[i % fallback.length]));
-    return map;
+
+/** Convert a “relative” (0..100) coordinate into pixels for a given canvas size. */
+export function relToPx(rel: number, canvasSize: number): number {
+    return (rel / 100) * canvasSize;
 }
+
+/** Merge a saved layout (positions/radii/colors/urls) into the core graph by id. */
+export function mergeCoreAndLayout(core: GraphData, layout?: Partial<GraphData>): GraphData {
+    if (!layout) return core;
+
+    const circles = core.circles.map(c => {
+        const m = layout.circles?.find(x => x.id === c.id);
+        return m ? { ...c, ...pick(m, ["cx_rel","cy_rel","r_rel","color","label","id"]) } : c;
+    });
+
+    const nodes = core.nodes.map(n => {
+        const m = layout.nodes?.find(x => x.id === n.id);
+        return m ? { ...n, ...pick(m, ["x_rel","y_rel","color","url","label","id"]) } : n;
+    });
+
+    const edges = core.edges.map(e => {
+        const m = layout.edges?.find(x => x.id === e.id);
+        return m ? { ...e, ...pick(m, ["color","url","label","id"]) } : e;
+    });
+
+    return { circles, nodes, edges };
+}
+
+function pick<T extends object, K extends keyof T>(obj: T, keys: K[]): Partial<T> {
+    const out: Partial<T> = {};
+    for (const k of keys) if (k in obj) (out as any)[k] = obj[k];
+    return out;
+}
+

@@ -2,207 +2,161 @@
   "circles": [
     {
       "id": "infectious-diseases",
-      "label": "infectious diseases",
-      "color": "#7db3ff",
-      "cx_rel": 49.310789883548836,
-      "cy_rel": 7.509257554176201,
-      "r_rel": 18
+      "label": "Infectious diseases"
     },
     {
       "id": "hereditary-diseases",
-      "label": "hereditary diseases",
-      "color": "#b7e3b0",
-      "cx_rel": 50,
-      "cy_rel": 50,
-      "r_rel": 35
-    },
-    {
-      "id": "neoplasms",
-      "label": "neoplasms",
-      "color": "#f2a7a7",
-      "cx_rel": 85.60553611760868,
-      "cy_rel": 70.08640106122812,
-      "r_rel": 18
-    },
-    {
-      "id": "deficiency-diseases",
-      "label": "deficiency diseases",
-      "color": "#a5b4ff",
-      "cx_rel": 15.624865760920725,
-      "cy_rel": 70.68391653749853,
-      "r_rel": 18
-    },
-    {
-      "id": "intoxications",
-      "label": "intoxications",
-      "color": "#c0b4ff",
-      "cx_rel": 51.58685976140368,
-      "cy_rel": 89.53295819521495,
-      "r_rel": 18
+      "label": "hereditary diseases"
     },
     {
       "id": "allergies",
-      "label": "allergies",
-      "color": "#ffd89e",
-      "cx_rel": 15.500859233837705,
-      "cy_rel": 27.77753844245494,
-      "r_rel": 18
+      "label": "allergies"
+    },
+    {
+      "id": "neoplasms",
+      "label": "neoplasms"
+    },
+    {
+      "id": "intoxications",
+      "label": "intoxications"
     },
     {
       "id": "other",
-      "label": "other",
-      "color": "#a5ece4",
-      "cx_rel": 83.35275885135583,
-      "cy_rel": 27.15848218204136,
-      "r_rel": 18
+      "label": "other"
+    },
+    {
+      "id": "deficiency-diseases",
+      "label": "deficiency diseases"
     }
   ],
   "nodes": [
-    {
-      "id": "atopic-dermatitis",
-      "label": "atopic dermatitis",
-      "classIds": [
-        "allergies"
-      ],
-      "x_rel": 26.040639110609526,
-      "y_rel": 33.259868358013314
-    },
-    {
-      "id": "ichtyosis",
-      "label": "ichtyosis",
-      "classIds": [
-        "allergies"
-      ],
-      "x_rel": 27.022020667042856,
-      "y_rel": 27.931419070654258
-    },
-    {
-      "id": "cystic-fibrosis",
-      "label": "cystic fibrosis",
-      "classIds": [
-        "hereditary-diseases"
-      ],
-      "x_rel": 54.04131573543999,
-      "y_rel": 54.504915421896186
-    },
     {
       "id": "sickle-cell-disease",
       "label": "sickle cell disease",
       "classIds": [
         "hereditary-diseases"
-      ],
-      "x_rel": 45.13949253137716,
-      "y_rel": 49.727575199548575
-    },
-    {
-      "id": "focal-segmental-glomerulosclerosis",
-      "label": "focal segmental glomerulosclerosis",
-      "classIds": [
-        "other"
-      ],
-      "x_rel": 68.04764102054192,
-      "y_rel": 24.258186003385692
-    },
-    {
-      "id": "tuberculosis",
-      "label": "tuberculosis",
-      "classIds": [
-        "infectious-diseases"
-      ],
-      "x_rel": 51.43114657923239,
-      "y_rel": 19.337208580360926
-    },
-    {
-      "id": "crohns-disease",
-      "label": "Crohn's disease",
-      "classIds": [
-        "hereditary-diseases"
-      ],
-      "x_rel": 39.09063911060952,
-      "y_rel": 38.7655262257333
-    },
-    {
-      "id": "vitamin-d-deficiency",
-      "label": "vitamin D deficiency",
-      "classIds": [
-        "deficiency-diseases"
-      ],
-      "x_rel": 18.7986559577876,
-      "y_rel": 56.20740604334097
+      ]
     },
     {
       "id": "malaria",
       "label": "malaria",
       "classIds": [
         "infectious-diseases"
-      ],
-      "x_rel": 45.767509378555225,
-      "y_rel": 19.685526225733316
+      ]
     },
     {
-      "id": "trypanosomiasis",
-      "label": "trypanosomiasis",
+      "id": "tuberculosis",
+      "label": "tuberculosis",
       "classIds": [
         "infectious-diseases"
-      ],
-      "x_rel": 57.2267011117381,
-      "y_rel": 18.74727440135427
+      ]
     },
     {
       "id": "hypoxia",
       "label": "hypoxia",
       "classIds": [
         "other"
-      ],
-      "x_rel": 74.0980451539505,
-      "y_rel": 31.127781869977106
+      ]
+    },
+    {
+      "id": "focal-segmental-glomerulosclerosis",
+      "label": "focal segmental glomerulosclerosis",
+      "classIds": [
+        "other"
+      ]
+    },
+    {
+      "id": "trypanosomiasis",
+      "label": "trypanosomiasis",
+      "classIds": [
+        "infectious-diseases"
+      ]
+    },
+    {
+      "id": "cystic-fibrosis",
+      "label": "cystic fibrosis",
+      "classIds": [
+        "hereditary-diseases"
+      ]
+    },
+    {
+      "id": "atopic-dermatitis",
+      "label": "atopic dermatitis",
+      "classIds": [
+        "allergies"
+      ]
+    },
+    {
+      "id": "ichtyosis",
+      "label": "ichtyosis",
+      "classIds": [
+        "allergies"
+      ]
+    },
+    {
+      "id": "vitamin-d-deficiency",
+      "label": "vitamin D deficiency",
+      "classIds": [
+        "deficiency-diseases"
+      ]
+    },
+    {
+      "id": "crohn-s-disease",
+      "label": "Crohn's disease",
+      "classIds": [
+        "hereditary-diseases"
+      ]
     },
     {
       "id": "plague",
       "label": "plague",
       "classIds": [
         "infectious-diseases"
-      ],
-      "x_rel": 39.967340222347616,
-      "y_rel": 19.61027249142188
+      ]
     }
   ],
   "edges": [
     {
-      "id": "vitamin-d-deficiency__to__atopic-dermatitis",
-      "source": "vitamin-d-deficiency",
-      "target": "atopic-dermatitis",
-      "relation": "evolutionary sequela (seed)"
-    },
-    {
-      "id": "tuberculosis__to__cystic-fibrosis",
-      "source": "tuberculosis",
-      "target": "cystic-fibrosis",
-      "relation": "evolutionary sequela (seed)"
-    },
-    {
       "id": "malaria__to__sickle-cell-disease",
       "source": "malaria",
       "target": "sickle-cell-disease",
-      "relation": "evolutionary sequela (seed)"
-    },
-    {
-      "id": "trypanosomiasis__to__focal-segmental-glomerulosclerosis",
-      "source": "trypanosomiasis",
-      "target": "focal-segmental-glomerulosclerosis",
-      "relation": "evolutionary sequela (seed)"
+      "relation": "evolutionary sequela (n=1)"
     },
     {
       "id": "hypoxia__to__tuberculosis",
       "source": "hypoxia",
       "target": "tuberculosis",
-      "relation": "evolutionary sequela (seed)"
+      "relation": "evolutionary sequela (n=1)"
     },
     {
-      "id": "plague__to__crohns-disease",
+      "id": "trypanosomiasis__to__focal-segmental-glomerulosclerosis",
+      "source": "trypanosomiasis",
+      "target": "focal-segmental-glomerulosclerosis",
+      "relation": "evolutionary sequela (n=1)"
+    },
+    {
+      "id": "tuberculosis__to__cystic-fibrosis",
+      "source": "tuberculosis",
+      "target": "cystic-fibrosis",
+      "relation": "evolutionary sequela (n=1)"
+    },
+    {
+      "id": "vitamin-d-deficiency__to__atopic-dermatitis",
+      "source": "vitamin-d-deficiency",
+      "target": "atopic-dermatitis",
+      "relation": "evolutionary sequela (n=1)"
+    },
+    {
+      "id": "vitamin-d-deficiency__to__ichtyosis",
+      "source": "vitamin-d-deficiency",
+      "target": "ichtyosis",
+      "relation": "evolutionary sequela (n=1)"
+    },
+    {
+      "id": "plague__to__crohn-s-disease",
       "source": "plague",
-      "target": "crohns-disease",
-      "relation": "evolutionary sequela (seed)"
+      "target": "crohn-s-disease",
+      "relation": "evolutionary sequela (n=1)"
     }
   ]
 }

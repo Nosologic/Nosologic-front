@@ -1,34 +1,35 @@
-// Canonical data shapes shared by Viewer & Editor.
+// canonical types the viewer + editor expect
 
-export type Circle = {
+export interface Circle {
     id: string;
     label: string;
     color?: string;
-    cx_rel?: number; // 0..100
-    cy_rel?: number; // 0..100
-    r_rel?: number;  // 0..100
-    url?: string;
-};
+    cx_rel: number;   // 0..100 in relative %
+    cy_rel: number;   // 0..100 in relative %
+    r_rel: number;    // radius in relative %
+}
 
-export type Node = {
+export interface Node {
     id: string;
     label: string;
     classIds: string[];
-    url?: string;
-    x_rel?: number; // 0..100
-    y_rel?: number; // 0..100
-};
+    x_rel: number;    // 0..100 in relative %
+    y_rel: number;    // 0..100 in relative %
+    url?: string;     // optional deep link
+    color?: string;   // optional per-node color
+}
 
-export type Edge = {
-    id: string;       // `${source}__to__${target}`
+export interface Edge {
+    id: string;
     source: string;
     target: string;
     relation: string;
-    url?: string;
-};
+    url?: string;     // optional deep link
+    color?: string;   // optional per-edge color
+}
 
-export type GraphData = {
+export interface GraphData {
     circles: Circle[];
-    nodes: Node[];
-    edges: Edge[];
-};
+    nodes:   Node[];
+    edges:   Edge[];
+}

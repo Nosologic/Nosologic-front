@@ -1,123 +1,124 @@
-import { useEffect, useRef } from "react";
 import CytoscapeComponent from "react-cytoscapejs";
-import type { Core, EventObjectEdge, EventObjectNode } from "cytoscape";
-import type { GraphData } from "./types";
-import { relToPx } from "./utils";
+import cytoscape, { ElementDefinition } from "cytoscape";
 import { makeStyles } from "./cyStyles";
-import { restoreViewport, saveViewport } from "./viewport";
+import type { GraphData, Circle, Node, Edge } from "./types";
+import { mergeCoreAndLayout, relToPx } from "./utils";
+import { useEffect, useMemo, useState } from "react";
 
-export default function Viewer({
-                                   data,
-                                   aspectRatio = 1,
-                                   onOpenNode,
-                                   onOpenEdge,
-                               }: {
+type Props = {
     data: GraphData;
-    aspectRatio?: number;
-    onOpenNode?: (id: string, url?: string) => void;
-    onOpenEdge?: (src: string, tgt: string, url?: string) => void;
-}) {
-    const pad = 16;
-    const width = 980;
-    const height = Math.round(width / aspectRatio);
-    const innerW = width - pad * 2;
-    const innerH = height - pad * 2;
+    aspectRatio?: number; // canvas width/height ratio, default 1 (square)
+};
 
-    const elements = [
-        ...data.nodes.map((n) => ({
-            data: { id: n.id, label: n.label, url: n.url },
-            position: {
-                x: relToPx(n.x_rel, innerW, innerW * 0.5),
-                y: relToPx(n.y_rel, innerH, innerH * 0.5),
-            },
-        })),
-        ...data.edges.map((e) => ({
-            data: { id: e.id, source: e.source, target: e.target, label: e.relation, url: e.url },
-        })),
-    ];
+/** fallback palette in case a color is missing */
+const DEFAULTS = {
+    circle: "#98b6ff",
+    node:   "#4aa3a3",
+    edge:   "#9aa3ad"
+};
 
-    const stylesheet = makeStyles(data);
-    const cyRef = useRef<Core | null>(null);
-    const gRef = useRef<SVGGElement | null>(null);
-
-    const syncOverlay = () => {
-        const cy = cyRef.current, g = gRef.current;
-        if (!cy || !g) return;
-        const pan = cy.pan(), zoom = cy.zoom();
-        g.setAttribute("transform", `translate(${pan.x}, ${pan.y}) scale(${zoom})`);
-    };
+export default function Viewer({ data, aspectRatio = 1 }: Props) {
+    // --- merge in any saved layout shipped with the site (if present) -------------
+    const [layout, setLayout] = useState<Partial<GraphData> | null>(null);
 
     useEffect(() => {
-        return () => {
-            if (cyRef.current) {
-                cyRef.current.off("viewport tap");
-                cyRef.current.destroy();
-                cyRef.current = null;
-            }
-        };
+        // optional load of a layout json (manual.json). Ignore errors quietly.
+        fetch("/data/layouts/manual.json")
+            .then(r => (r.ok ? r.json() : null))
+            .then(setLayout)
+            .catch(() => setLayout(null));
     }, []);
 
+    const g: GraphData = useMemo(
+        () => mergeCoreAndLayout(data, layout || undefined),
+        [data, layout]
+    );
+
+    // --- build cytoscape elements --------------------------------------------------
+    // we’ll map 0..100 “relative” coords to the current canvas size later
+    function buildElements(canvasSize: number): ElementDefinition[] {
+        const circles: ElementDefinition[] = (g.circles as Circle[]).map(c => ({
+            group: "nodes",
+            data: {
+                id: `circle:${c.id}`,      // avoid id clash with disease nodes
+                label: c.label,
+                isCircle: true,
+                diameter: relToPx((c.r_rel ?? 0) * 2, canvasSize),
+                color: c.color || DEFAULTS.circle
+            },
+            position: {
+                x: relToPx(c.cx_rel, canvasSize),
+                y: relToPx(c.cy_rel, canvasSize)
+            }
+        }));
+
+        const nodes: ElementDefinition[] = (g.nodes as Node[]).map(n => ({
+            group: "nodes",
+            data: {
+                id: n.id,
+                label: n.label,
+                url: n.url,
+                color: n.color || DEFAULTS.node
+            },
+            position: {
+                x: relToPx(n.x_rel, canvasSize),
+                y: relToPx(n.y_rel, canvasSize)
+            }
+        }));
+
+        const edges: ElementDefinition[] = (g.edges as Edge[]).map(e => ({
+            group: "edges",
+            data: {
+                id: e.id,
+                source: e.source,
+                target: e.target,
+                relation: e.relation,
+                url: e.url,
+                color: e.color || DEFAULTS.edge
+            }
+        }));
+
+        return [...circles, ...nodes, ...edges];
+    }
+
+    // --- render -------------------------------------------------------------------
+    // compute a square canvas, then let container control actual size via CSS
+    const stylesheet = useMemo(() => makeStyles(), []);
+    const [cy, setCy] = useState<cytoscape.Core | null>(null);
+
+    // hook up interactions (click -> navigate)
+    useEffect(() => {
+        if (!cy) return;
+
+        // click disease node (not a circle)
+        cy.on("tap", "node[!isCircle]", (evt) => {
+            const d = evt.target.data() as { id: string; url?: string };
+            const url = d.url || `/diseases/${encodeURIComponent(d.id)}`;
+            window.location.href = url;
+        });
+
+        // click edge -> evseq
+        cy.on("tap", "edge", (evt) => {
+            const d = evt.target.data() as { id: string; url?: string };
+            const url = d.url || `/evseq/${encodeURIComponent(d.id)}`;
+            window.location.href = url;
+        });
+
+        return () => { cy.removeAllListeners(); };
+    }, [cy]);
+
+    // We rebuild elements when size changes; CytoscapeComponent passes a ref we can read later.
+    const canvasPx = 1000; // any fixed “virtual” canvas; relToPx maps 0..100 against this.
+    const elements = useMemo(() => buildElements(canvasPx), [g]);
+
     return (
-        <div style={{ position: "relative", width, height, margin: "24px auto", borderRadius: 8, background: "#f7fafb", border: "1px solid #e4e9ee" }}>
-            {/* Circles BELOW Cytoscape so nodes render on top */}
-            <div style={{ position: "absolute", left: pad, top: pad, width: innerW, height: innerH, zIndex: 0, pointerEvents: "none" }}>
-                <svg width={innerW} height={innerH}>
-                    <g ref={gRef}>
-                        {data.circles.map((c) => {
-                            const cx = relToPx(c.cx_rel, innerW, innerW * 0.25);
-                            const cy = relToPx(c.cy_rel, innerH, innerH * 0.5);
-                            const r  = relToPx(c.r_rel, Math.min(innerW, innerH), Math.min(innerW, innerH) * 0.22);
-                            return (
-                                <g key={c.id} aria-label={c.label}>
-                                    <circle cx={cx} cy={cy} r={r} fill={c.color ?? "#cde"} fillOpacity={0.33} stroke={c.color ?? "#99b"} />
-                                    <text x={cx} y={cy - r - 8} textAnchor="middle" fontSize={13} fontFamily="system-ui, Segoe UI, Arial, sans-serif" fontStyle="italic" fill="#23343d">
-                                        {c.label}
-                                    </text>
-                                </g>
-                            );
-                        })}
-                    </g>
-                </svg>
-            </div>
-
-            {/* Cytoscape ABOVE circles */}
+        <div style={{ width: "100%", height: `calc(70vw/${aspectRatio})`, maxHeight: "80vh" }}>
             <CytoscapeComponent
-                elements={elements as any}
-                style={{ position: "absolute", left: pad, top: pad, width: innerW, height: innerH, zIndex: 1 }}
-                layout={{ name: "preset" }}
-                userPanningEnabled={true}
-                userZoomingEnabled={true}
-                boxSelectionEnabled={false}
-                stylesheet={stylesheet as any}
-                pixelRatio={1}
-                cy={(cy) => {
-                    const core = cy as Core;
-                    cyRef.current = core;
-
-                    // Viewer: nodes must NOT drag
-                    core.autoungrabify(true);
-                    core.nodes().ungrabify();
-
-                    restoreViewport(core);
-                    syncOverlay();
-                    core.on("viewport", () => { syncOverlay(); saveViewport(core); });
-
-                    // NODE: open /diseases-md/<nodeId>
-                    core.on("tap", "node", (e) => {
-                        const id = e.target.id();                    // e.g. "hypoxia"
-                        saveViewport(core);
-                        window.location.href = `/diseases-md/${id}`;
-                    });
-
-                    // EDGE: open /evseq/<edgeId>
-                    core.on("tap", "edge", (e) => {
-                        const edgeId = e.target.id();                // e.g. "hypoxia__to__tuberculosis"
-                        saveViewport(core);
-                        window.location.href = `/evseq/${edgeId}`;
-                    });
-
-
-                }}
+                cy={setCy}
+                elements={elements}
+                stylesheet={stylesheet}
+                wheelSensitivity={0.2}
+                style={{ width: "100%", height: "100%", background: "#edf3f7" }}
             />
         </div>
     );

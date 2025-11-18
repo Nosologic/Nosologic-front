@@ -1,0 +1,86 @@
+[
+  {
+    "id": "sickle-cell-disease",
+    "label": "sickle cell disease",
+    "classIds": [
+      "hereditary-diseases"
+    ]
+  },
+  {
+    "id": "malaria",
+    "label": "malaria",
+    "classIds": [
+      "infectious-diseases"
+    ]
+  },
+  {
+    "id": "tuberculosis",
+    "label": "tuberculosis",
+    "classIds": [
+      "infectious-diseases"
+    ]
+  },
+  {
+    "id": "hypoxia",
+    "label": "hypoxia",
+    "classIds": [
+      "other"
+    ]
+  },
+  {
+    "id": "focal-segmental-glomerulosclerosis",
+    "label": "focal segmental glomerulosclerosis",
+    "classIds": [
+      "other"
+    ]
+  },
+  {
+    "id": "trypanosomiasis",
+    "label": "trypanosomiasis",
+    "classIds": [
+      "infectious-diseases"
+    ]
+  },
+  {
+    "id": "cystic-fibrosis",
+    "label": "cystic fibrosis",
+    "classIds": [
+      "hereditary-diseases"
+    ]
+  },
+  {
+    "id": "atopic-dermatitis",
+    "label": "atopic dermatitis",
+    "classIds": [
+      "allergies"
+    ]
+  },
+  {
+    "id": "ichtyosis",
+    "label": "ichtyosis",
+    "classIds": [
+      "allergies"
+    ]
+  },
+  {
+    "id": "vitamin-d-deficiency",
+    "label": "vitamin D deficiency",
+    "classIds": [
+      "deficiency-diseases"
+    ]
+  },
+  {
+    "id": "crohn-s-disease",
+    "label": "Crohn's disease",
+    "classIds": [
+      "hereditary-diseases"
+    ]
+  },
+  {
+    "id": "plague",
+    "label": "plague",
+    "classIds": [
+      "infectious-diseases"
+    ]
+  }
+]

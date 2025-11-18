@@ -1,0 +1,108 @@
+{
+  "circles": [
+    {
+      "id": "infectious-diseases",
+      "cx_rel": 50,
+      "cy_rel": 50,
+      "r_rel": 28
+    },
+    {
+      "id": "hereditary-diseases",
+      "cx_rel": 19.655223435628404,
+      "cy_rel": 82.97312507746618,
+      "r_rel": 28
+    },
+    {
+      "id": "allergies",
+      "cx_rel": 24.709423947961373,
+      "cy_rel": 11.79313452877692,
+      "r_rel": 28
+    },
+    {
+      "id": "neoplasms",
+      "cx_rel": 80.5864223959748,
+      "cy_rel": 22.463114167146305,
+      "r_rel": 28
+    },
+    {
+      "id": "intoxications",
+      "cx_rel": 0,
+      "cy_rel": 41.556761326070635,
+      "r_rel": 28
+    },
+    {
+      "id": "other",
+      "cx_rel": 48.29569534251459,
+      "cy_rel": 81.00760577200253,
+      "r_rel": 28
+    },
+    {
+      "id": "deficiency-diseases",
+      "cx_rel": 90.41402827129055,
+      "cy_rel": 81.42878914803028,
+      "r_rel": 28
+    }
+  ],
+  "nodes": [
+    {
+      "id": "sickle-cell-disease",
+      "x_rel": 17.37743305675995,
+      "y_rel": 28.5579372204056
+    },
+    {
+      "id": "malaria",
+      "x_rel": 12.323232544426983,
+      "y_rel": 59.49577065953465
+    },
+    {
+      "id": "tuberculosis",
+      "x_rel": 92.27149519405754,
+      "y_rel": 56.738934016443956
+    },
+    {
+      "id": "hypoxia",
+      "x_rel": 84.30730044735104,
+      "y_rel": 64.70312876315046
+    },
+    {
+      "id": "focal-segmental-glomerulosclerosis",
+      "x_rel": 72.36100832729132,
+      "y_rel": 9.106923127487825
+    },
+    {
+      "id": "trypanosomiasis",
+      "x_rel": 95.94727738484514,
+      "y_rel": 42.8015932097076
+    },
+    {
+      "id": "cystic-fibrosis",
+      "x_rel": 95.18148942843105,
+      "y_rel": 17.37743305675995
+    },
+    {
+      "id": "atopic-dermatitis",
+      "x_rel": 78.94678475245244,
+      "y_rel": 90.73991928122938
+    },
+    {
+      "id": "ichtyosis",
+      "x_rel": 105.44304804437981,
+      "y_rel": 41.27001729687943
+    },
+    {
+      "id": "vitamin-d-deficiency",
+      "x_rel": 94.26254388073416,
+      "y_rel": 75.8836329267961
+    },
+    {
+      "id": "crohn-s-disease",
+      "x_rel": 59.03629788568621,
+      "y_rel": 92.8841255591888
+    },
+    {
+      "id": "plague",
+      "x_rel": 24.728997438335163,
+      "y_rel": 85.07308840376514
+    }
+  ]
+}

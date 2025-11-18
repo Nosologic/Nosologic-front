@@ -1,0 +1,17 @@
+{
+  "name": "orkg-sequela",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Fetch one ORKG comparison and emit TableData + GraphData (evolutionary sequela). Circles come from C123035.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node ./scripts/live-test.mjs"
+  },
+  "engines": { "node": ">=18" },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}

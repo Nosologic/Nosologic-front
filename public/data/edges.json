@@ -1,0 +1,44 @@
+[
+  {
+    "id": "malaria__to__sickle-cell-disease",
+    "source": "malaria",
+    "target": "sickle-cell-disease",
+    "relation": "evolutionary sequela (n=1)"
+  },
+  {
+    "id": "hypoxia__to__tuberculosis",
+    "source": "hypoxia",
+    "target": "tuberculosis",
+    "relation": "evolutionary sequela (n=1)"
+  },
+  {
+    "id": "trypanosomiasis__to__focal-segmental-glomerulosclerosis",
+    "source": "trypanosomiasis",
+    "target": "focal-segmental-glomerulosclerosis",
+    "relation": "evolutionary sequela (n=1)"
+  },
+  {
+    "id": "tuberculosis__to__cystic-fibrosis",
+    "source": "tuberculosis",
+    "target": "cystic-fibrosis",
+    "relation": "evolutionary sequela (n=1)"
+  },
+  {
+    "id": "vitamin-d-deficiency__to__atopic-dermatitis",
+    "source": "vitamin-d-deficiency",
+    "target": "atopic-dermatitis",
+    "relation": "evolutionary sequela (n=1)"
+  },
+  {
+    "id": "vitamin-d-deficiency__to__ichtyosis",
+    "source": "vitamin-d-deficiency",
+    "target": "ichtyosis",
+    "relation": "evolutionary sequela (n=1)"
+  },
+  {
+    "id": "plague__to__crohn-s-disease",
+    "source": "plague",
+    "target": "crohn-s-disease",
+    "relation": "evolutionary sequela (n=1)"
+  }
+]
